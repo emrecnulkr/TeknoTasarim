@@ -1,0 +1,3052 @@
+<!DOCTYPE html>
+<!-- saved from url=(0172)https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&cHash=16dd715993449effcf3951fe40aaa206 -->
+<html ng-app="nanotec" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+
+
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2017 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/
+-->
+
+
+
+<title>Animation Brushless DC-Motors | NANOTEC</title>
+<meta name="language" content="en">
+<meta name="keywords" content="stepper motor, BLDC motor animation, stepper motor settings, how stepper motors work, how BLDC motors work, how brushless DC motors work">
+<meta name="description" content="Interactive animation of how stepper motors and BLDC motors work.">
+<meta name="robots" content="index,follow">
+<link rel="canoncial" href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206">
+<link rel="alternate" href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206" hreflang="x-default">
+<link rel="alternate" href="http://us.nanotec.com/support/knowledge-base/stepper-motor-and-bldc-motors-animation/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206" hreflang="en-us">
+<link rel="alternate" href="http://de.nanotec.com/support/tutorials/animation-buerstenlose-dc-motoren/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206" hreflang="de">
+<link rel="alternate" href="http://cn.nanotec.com/support/knowledge-base/stepper-motor-and-bldc-motors-animation/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206" hreflang="zh-cn">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canoncial" href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/">
+<meta name="generator" content="TYPO3 CMS">
+
+
+
+
+
+
+<script type="text/javascript" async="" defer="" src="./Animation Brushless DC-Motors _ NANOTEC_files/piwik.js.indir"></script><script async="" src="./Animation Brushless DC-Motors _ NANOTEC_files/analytics.js.indir"></script><script src="./Animation Brushless DC-Motors _ NANOTEC_files/bd4d1f63e4-c7d724c3c5399b88fc4331f3e38cfd67.js.indir" type="text/javascript"></script>
+
+
+<script type="text/javascript">var nanotecCurrencyJson = '{"cu_symbol_left":"\u20ac","cu_symbol_right":"","cu_sub_symbol_left":"\u00a2","cu_sub_symbol_right":"","cu_decimal_point":",","cu_thousands_point":".","cu_decimal_digits":"2","cu_sub_divisor":"100","tx_tvtables_euro_conversion_rate":"1.00"}';var nanotecCurrency = JSON.parse(nanotecCurrencyJson);</script>
+    <script type="text/javascript">var nanotecUnitGroupsJson = '[{"baseUnit":null,"pid":245,"title":"Torque [Ncm]","uid":3,"units":{"0000000066ca490100000000192a26c4":{"conversionFactor":1,"pid":245,"symbol":"Ncm","title":"Ncm","uid":6},"0000000066ca490f00000000192a26c4":{"conversionFactor":1.41611932278,"pid":245,"symbol":"oz-in","title":"oz-in","uid":7},"0000000066ca490e00000000192a26c4":{"conversionFactor":0.01,"pid":245,"symbol":"Nm","title":"Nm","uid":8}}},{"baseUnit":null,"pid":245,"title":"Length [mm]","uid":4,"units":{"0000000066ca490a00000000192a26c4":{"conversionFactor":1,"pid":245,"symbol":"mm","title":"millimeters","uid":10},"0000000066ca490900000000192a26c4":{"conversionFactor":0.03936,"pid":245,"symbol":"in","title":"inch","uid":12},"0000000066ca490800000000192a26c4":{"conversionFactor":0.001,"pid":245,"symbol":"m","title":"Meters","uid":27}}},{"baseUnit":null,"pid":245,"title":"Weight [kg]","uid":6,"units":{"0000000066ca497400000000192a26c4":{"conversionFactor":1,"pid":245,"symbol":"kg","title":"Kilogramm","uid":14},"0000000066ca497300000000192a26c4":{"conversionFactor":2,"pid":245,"symbol":"lb","title":"Pound","uid":16},"0000000066ca497200000000192a26c4":{"conversionFactor":1000,"pid":245,"symbol":"g","title":"Gramm","uid":15}}},{"baseUnit":null,"pid":245,"title":"Ampere","uid":7,"units":{"0000000066ca497e00000000192a26c4":{"conversionFactor":1,"pid":245,"symbol":"A","title":"Ampere","uid":17}}},{"baseUnit":null,"pid":245,"title":"mH","uid":8,"units":{"0000000066ca497a00000000192a26c4":{"conversionFactor":1,"pid":245,"symbol":"mH","title":"Millihenry","uid":18}}},{"baseUnit":null,"pid":245,"title":"Length [m]","uid":11,"units":{"0000000066ca496600000000192a26c4":{"conversionFactor":1,"pid":245,"symbol":"m","title":"Meters","uid":22},"0000000066ca496500000000192a26c4":{"conversionFactor":39,"pid":245,"symbol":"in","title":"Inch","uid":23},"0000000066ca496400000000192a26c4":{"conversionFactor":1000,"pid":245,"symbol":"mm","title":"Millimeters","uid":28}}},{"baseUnit":null,"pid":245,"title":"Temperature [\u00b0C]","uid":12,"units":{"0000000066ca496000000000192a26c4":{"conversionFactor":1,"pid":245,"symbol":"\u00b0C","title":"Celsius","uid":25},"0000000066ca496f00000000192a26c4":{"conversionFactor":0,"pid":245,"symbol":"\u00b0F","title":"Fahrenheit","uid":26}}},{"baseUnit":null,"pid":245,"title":"Torque [Nm]","uid":13,"units":{"0000000066ca496b00000000192a26c4":{"conversionFactor":1,"pid":245,"symbol":"Nm","title":"Nm","uid":31},"0000000066ca496a00000000192a26c4":{"conversionFactor":141,"pid":245,"symbol":"oz-in","title":"oz-in","uid":32},"0000000066ca496900000000192a26c4":{"conversionFactor":100,"pid":245,"symbol":"Ncm","title":"Ncm","uid":33}}}]';var nanotecUnitGroups = JSON.parse(nanotecUnitGroupsJson || '[]');</script>
+
+
+            <link rel="apple-touch-icon" sizes="57x57" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="60x60" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-60x60.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="76x76" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-76x76.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-114x114.png">
+            <link rel="apple-touch-icon" sizes="120x120" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-120x120.png">
+            <link rel="apple-touch-icon" sizes="144x144" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-144x144.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-152x152.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/apple-touch-icon-180x180.png">
+            <link rel="icon" type="image/png" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/favicon-32x32.png" sizes="32x32">
+            <link rel="icon" type="image/png" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/favicon-194x194.png" sizes="194x194">
+            <link rel="icon" type="image/png" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/android-chrome-192x192.png" sizes="192x192">
+            <link rel="icon" type="image/png" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/favicon-16x16.png" sizes="16x16">
+            <link rel="manifest" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/manifest.json">
+            <link rel="mask-icon" href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Images/favicons/safari-pinned-tab.svg" color="#5488c7">
+            <meta name="msapplication-TileColor" content="#5488c7">
+            <meta name="msapplication-TileImage" content="/typo3conf/ext/nanotec/Resources/Public/Images/favicons/mstile-144x144.png">
+            <meta name="theme-color" content="#ffffff">
+        
+
+                <script>
+                    var gaProperty = 'UA-3876488-1';
+                    var disableStr = 'ga-disable-' + gaProperty;
+                    if (document.cookie.indexOf(disableStr + '=true') > -1) {
+                        window[disableStr] = true;
+                    }
+                    function gaOptout() {
+                        document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+                        window[disableStr] = true;
+                    }
+                </script>
+                <script>
+                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                    ga('create', 'UA-3876488-1', 'auto');
+                    ga('set', 'anonymizeIp', true);
+                    ga('send', 'pageview');
+
+                </script>
+            
+
+                <!-- Piwik -->
+                <script type="text/javascript">
+                    var _paq = _paq || [];
+                    _paq.push(["setDomains", ["*.en.nanotec.com","*.cn.nanotec.com","*.de.nanotec.com","*.us.nanotec.com"]]);
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+                    (function() {
+                        var u="//pwk.nanotec.de/";
+                        _paq.push(['setTrackerUrl', u+'piwik.php']);
+                        _paq.push(['setSiteId', 1]);
+                        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                    })();
+                </script>
+                <noscript>&lt;p&gt;&lt;img src="//pwk.nanotec.de/piwik.php?idsite=1" style="border:0;" alt="" /&gt;&lt;/p&gt;</noscript>
+                <!-- End Piwik Code -->
+
+<link rel="stylesheet" href="./Animation Brushless DC-Motors _ NANOTEC_files/main.css">
+<link rel="stylesheet" href="./Animation Brushless DC-Motors _ NANOTEC_files/vhs-assets-f1fadce04a05bfbbdf5473c7cab678e6.css">
+<script type="text/javascript">var TYPO3RsaEncryptionPublicKeyUrl = '/index.php?eID=RsaPublicKeyGenerationController';</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+            
+            
+                
+                
+    
+    
+
+            
+        
+    
+
+
+
+        
+
+    
+
+    <!-- build:css styles/main.css -->
+    <!-- inject:css -->
+    
+    <!-- endinject -->
+    <!-- endbuild -->
+
+
+    
+
+            
+            
+
+            
+            
+
+        
+
+
+    
+        <div class="tec-conf-bar ng-scope" ng-class="{&#39;is-show&#39;: currentConfigurationCtrl.show}" current-configuration="">
+            <div class="tec-cb-content">
+                <div class="tec-cb-container">
+                    <div class="item-left">
+                        <a href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206#" ng-click="currentConfigurationCtrl.clearConfiguration();" class="btn-delete" title="clear configuration">
+                            <i class="icon-trash"></i>
+                            <span class="text-display">
+                            <u>clear configuration</u>
+                        </span>
+                        </a>
+                    </div>
+                    <div class="item-middle">
+                        <i class="icon-adjust"></i>
+                        <span class="text-display">
+                        active configuration
+                    </span>
+                    </div>
+                    <div class="item-right">
+                        <a class="btn-back" title="back to configurator" href="https://en.nanotec.com/products/product-configurator/">
+                            <i class="icon-squared-big-left"></i>
+                            <span class="text-display">
+                            back to configurator
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+    
+    <header id="header" sticky-header="" class="" style="height: 156px;">
+        <div class="h-header">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-logo">
+                    <a class="navbar-brand" href="https://en.nanotec.com/">
+                        <picture>
+                            <img src="./Animation Brushless DC-Motors _ NANOTEC_files/logo.svg" alt="Nanotec Electronic GmbH &amp; Co KG" width="220">
+                            <source media="(min-width: 38em)" srcset="/typo3conf/ext/nanotec/Resources/Public/Images/logo.png">
+                            <source srcset="/typo3conf/ext/nanotec/Resources/Public/Images/logo.png">
+                        </picture>
+                    </a>
+                </div>
+                <div class="hidden-lg-up col-xs-6 ng-scope" mobile-nav="">
+                <span class="hamburger" ng-click="mNav.toggleMobileNav()" role="button" tabindex="0">
+                    <span></span>
+                </span>
+                </div>
+                <!-- if you want a off-canvas open, please write the class is-open. -->
+                <div class="hidden-md-down off-canvas-md-down ng-scope" ng-class="{&#39;is-open&#39;: mNav.isOpen()}" mobile-nav="">
+                    <div class="off-canvas-headline">
+                        Navigation
+                        <i class="icon-close" ng-click="mNav.toggleMobileNav()" role="button" tabindex="0"></i>
+                    </div>
+                    <div class="col-md-8 pull-md-right col-utilities">
+                        
+    <nav class="navbar navbar-utilities ng-scope" utilities-navbar="">
+        <ul class="nav navbar-nav pull-md-right">
+            
+                
+                <li class="nav-item item-login dropdown ng-scope" ng-class="{&#39;open&#39;: utilNav.isLoginDropdownOpen(), &#39;is-user-online&#39; : user.userExists()}" user="">
+                    <span class="nav-link" ng-click="utilNav.toggleLoginDropdown()" role="button" tabindex="0">
+                        <span class="text hidden-lg-up">My Account</span>
+                        <i class="icon-male-user"></i>
+                    </span>
+                    <div class="dropdown-menu dropdown-menu-right" click-outside="utilNav.closeLoginDropdown()" outside-if-not="item-login">
+                        <span class="link-back hidden-lg-up" ng-click="utilNav.toggleLoginDropdown()" role="button" tabindex="0">Back</span>
+
+                        
+                        <!-- ngIf: user.userExists() -->
+
+                        
+                        <!-- ngIf: !user.userExists() --><div class="dropdown-login ng-scope" ng-if="!user.userExists()">
+                            
+                            
+                                    
+                                    
+                                    
+                                
+                            <form action="https://en.nanotec.com/user-account-management/login/" target="_top" class="form ng-pristine ng-valid" method="post" onsubmit="return true;">
+                                <fieldset class="form-group">
+                                    <input type="text" id="login-user" name="user" class="form-control form-control-success" placeholder="Username:">
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <input type="password" id="login-password" name="pass" class="form-control form-control-danger" placeholder="Password:" data-rsa-encryption="">
+                                </fieldset>
+                                <div style="display: none;">
+                                    <input type="hidden" name="logintype" value="login" autocomplete="off">
+                                    <input type="hidden" name="pid" value="101" autocomplete="off">
+                                    <input type="hidden" name="referer" value="/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206" autocomplete="off">
+                                    <input type="hidden" name="return_url" value="/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-sm">Login
+                                    </button>
+                                </div>
+                                <a href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206#" title="Kennwort vergessen?">
+                                    <small>Forgot your password?</small>
+                                </a>
+                                <hr>
+                                <a class="btn btn-tertiary btn-sm" href="https://en.nanotec.com/user-account-management/register/">Register
+                                </a>
+                            </form>
+                        </div><!-- end ngIf: !user.userExists() -->
+                    </div>
+                </li>
+
+                <li class="nav-item item-basket">
+                    <span class="nav-link" ng-click="utilNav.toggleASideBasket()" role="button" tabindex="0">
+                        <span class="text hidden-lg-up">Shopping Cart</span>
+                        <i class="icon-cart-shopping"></i>
+                        <span class="badge">
+                            <span class="count ng-binding">0</span>
+                        </span>
+                    </span>
+                </li>
+            
+            <li class="nav-item item-languages pull-right dropdown" ng-class="{&#39;open&#39;: utilNav.isLangDropdownOpen()}">
+                <span class="nav-link" ng-click="utilNav.toggleLangDropdown()" role="button" tabindex="0">
+                    <span class="text hidden-lg-up">Languages</span>
+                    <span class="current-language">en</span>
+                </span>
+                <div class="dropdown-menu dropdown-menu-right" click-outside="utilNav.closeLangDropdown()" outside-if-not="item-languages">
+                    <span class="link-back hidden-lg-up" ng-click="utilNav.toggleLangDropdown()" role="button" tabindex="0">Back</span>
+                    
+                        
+                            <a class="dropdown-item is-current hidden-lg-up" href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206">English</a>
+                        
+                            <a class="dropdown-item" href="http://us.nanotec.com/support/knowledge-base/stepper-motor-and-bldc-motors-animation/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206">Engl. US</a>
+                        
+                            <a class="dropdown-item" href="http://de.nanotec.com/support/tutorials/animation-buerstenlose-dc-motoren/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206">Deutsch</a>
+                        
+                            <a class="dropdown-item" href="http://cn.nanotec.com/support/knowledge-base/stepper-motor-and-bldc-motors-animation/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206">Chinese</a>
+                        
+                    
+                </div>
+            </li>
+
+            <li class="nav-item item-unit-selector dropdown" ng-class="{&#39;open&#39;: utilNav.isUnitSelectorOpen()}">
+                <span class="nav-link" ng-click="utilNav.toggleUnitSelectorDropdown()" data-placement="bottom" title="" tooltip="" data-original-title="Ncm/oz-in? Select units" role="button" tabindex="0">
+                    <span class="text hidden-lg-up">Ncm/oz-in? Select units</span>
+                    <i class="icon-filter"></i>
+                </span>
+                <div class="dropdown-menu dropdown-menu-right" click-outside="utilNav.closeUnitSelector()" outside-if-not="item-unit-selector">
+                    <span class="link-back hidden-lg-up" ng-click="utilNav.toggleUnitSelectorDropdown()" role="button" tabindex="0">Back</span>
+                    <div class="dropdown-unit-selector text-md-center ng-scope" unit-selector="">
+                        <h4>Switch unit for attribute values</h4>
+                        <div class="controls">
+                            <button class="btn btn-tertiary-outline active" ng-class="{active: unitSelector.selectedPreset === &#39;metric&#39;}" ng-click="unitSelector.setPreset(&#39;metric&#39;)">Metric
+                            </button>
+                            <button class="btn btn-tertiary-outline" ng-class="{active: unitSelector.selectedPreset === &#39;imperial&#39;}" ng-click="unitSelector.setPreset(&#39;imperial&#39;)">Imperial (US)
+                            </button>
+                        </div>
+                        <a href="https://en.nanotec.com/products/unit-settings/">
+                            <u>... or select individual units for each attribute</u>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <form class="tec-form-search-submit pull-md-right ng-pristine ng-valid" action="https://en.nanotec.com/search/" method="get">
+            <input class="form-control" type="text" name="q" placeholder="Enter your search term">
+            <button type="submit">
+                <i class="icon-search"></i>
+                <span class="text">Search</span>
+            </button>
+        </form>
+    </nav>
+
+                    </div>
+                    <div class="col-md-12 col-navigation">
+                        
+    <nav id="navigation" class="navbar navbar-light" role="navigation">
+        
+            <ul class="nav navbar-nav">
+                <li class="nav-item item-home">
+                    <a class="nav-link is-home" href="https://en.nanotec.com/" title="Home">
+                        <span class="text-display">Home</span>
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                
+                    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                        <a class="nav-link" title="Products" href="https://en.nanotec.com/products/" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)">Products</a>
+                        
+                                <div class="menu menu-lg level-1">
+                                    <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                    
+                                            <a class="link-current" title="Products" href="https://en.nanotec.com/products/">
+                                                Products
+                                            </a>
+                                        
+                                    <div class="menus">
+                                        
+                                            
+                                                
+                                                        
+    <ul class="menu-box-info">
+        
+            
+                
+                        <li class="nav-item">
+                            
+                                    <a class="nav-link" title="Product Finder" href="https://en.nanotec.com/products/2261-product-finder/">
+                                        <span class="text-display">Product Finder</span>
+                                    </a>
+                                
+                            <div class="menu-bi-content">
+                                
+                                    <div class="excerpt">
+                                        The Nanotec Product Finder will help you find the right product for your exact needs.
+                                    </div>
+                                
+                                <a class="btn btn-tertiary" title="Product Finder" href="https://en.nanotec.com/products/product-finder/">
+                                    Product Finder
+                                    <i class="icon-squared-big-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    
+            
+        
+            
+                
+                        
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Brushless DC Motors" href="https://en.nanotec.com/products/156-brushless-dc-motors/">
+                <span class="text-display">
+                    Brushless DC Motors
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Brushless DC Motors" href="https://en.nanotec.com/products/156-brushless-dc-motors/">
+                    Brushless DC Motors
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Internal Rotor Motors" href="https://en.nanotec.com/products/2265-internal-rotor-motors/">
+                                <span class="text-display">Internal Rotor Motors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="External Rotor Motors" href="https://en.nanotec.com/products/2267-external-rotor-motors/">
+                                <span class="text-display">External Rotor Motors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Slotless Motors" href="https://en.nanotec.com/products/2266-slotless-motors/">
+                                <span class="text-display">Slotless Motors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Brushless DC Motors IP" href="https://en.nanotec.com/products/653-brushless-dc-motors-ip/">
+                                <span class="text-display">Brushless DC Motors IP</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+                    
+            
+        
+            
+                
+                        
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Stepper Motors" href="https://en.nanotec.com/products/153-stepper-motors/">
+                <span class="text-display">
+                    Stepper Motors
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Stepper Motors" href="https://en.nanotec.com/products/153-stepper-motors/">
+                    Stepper Motors
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Hybrid Stepper Motors" href="https://en.nanotec.com/products/2263-hybrid-stepper-motors/">
+                                <span class="text-display">Hybrid Stepper Motors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Flat Motors" href="https://en.nanotec.com/products/2254-flat-motors/">
+                                <span class="text-display">Flat Motors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Hollow Shaft Motors" href="https://en.nanotec.com/products/1269-hollow-shaft-motors/">
+                                <span class="text-display">Hollow Shaft Motors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="IP Stepper Motors" href="https://en.nanotec.com/products/154-ip-stepper-motors/">
+                                <span class="text-display">IP Stepper Motors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Permanent Magnet Stepper Motors" href="https://en.nanotec.com/products/2264-permanent-magnet-stepper-motors/">
+                                <span class="text-display">Permanent Magnet Stepper Motors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+                    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+
+                                                    
+                                            
+                                        
+                                            
+                                                
+                                                        
+    <ul>
+        
+            
+        
+            
+        
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Motors with Controller" href="https://en.nanotec.com/products/2262-motors-with-controller-brushless-dc-servo-motors-with-integrated-controller/">
+                <span class="text-display">
+                    Motors with Controller
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Motors with Controller" href="https://en.nanotec.com/products/2262-motors-with-controller-brushless-dc-servo-motors-with-integrated-controller/">
+                    Motors with Controller
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="C and CB Series" href="https://en.nanotec.com/products/155-c-and-cb-series-brushless-dc-servos-with-integrated-controller/">
+                                <span class="text-display">C and CB Series</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="N and O Series" href="https://en.nanotec.com/products/2268-n-and-o-series-brushless-dc-servos-with-integrated-controller/">
+                                <span class="text-display">N and O Series</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Motor Controllers" href="https://en.nanotec.com/products/158-motor-controllers/">
+                <span class="text-display">
+                    Motor Controllers
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Motor Controllers" href="https://en.nanotec.com/products/158-motor-controllers/">
+                    Motor Controllers
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Controllers N and C Series" href="https://en.nanotec.com/products/2269-controllers-n-and-c-series/">
+                                <span class="text-display">Controllers N and C Series</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Controllers SMCI/SMCP Series" href="https://en.nanotec.com/products/2270-controllers-smcismcp-series/">
+                                <span class="text-display">Controllers SMCI/SMCP Series</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Linear Actuators" href="https://en.nanotec.com/products/157-linear-drives/">
+                <span class="text-display">
+                    Linear Actuators
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Linear Actuators" href="https://en.nanotec.com/products/157-linear-drives/">
+                    Linear Actuators
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Hybrid Linear Actuators" href="https://en.nanotec.com/products/2271-hybrid-linear-actuators/">
+                                <span class="text-display">Hybrid Linear Actuators</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Permanent Magnet Linear Actuators" href="https://en.nanotec.com/products/2272-permanent-magnet-linear-actuators/">
+                                <span class="text-display">Permanent Magnet Linear Actuators</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Threaded Screws &amp; Nuts" href="https://en.nanotec.com/products/2273-threaded-screws-nuts/">
+                <span class="text-display">
+                    Threaded Screws &amp; Nuts
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Threaded Screws &amp; Nuts" href="https://en.nanotec.com/products/2273-threaded-screws-nuts/">
+                    Threaded Screws &amp; Nuts
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Threaded Screws" href="https://en.nanotec.com/products/290-threaded-screws/">
+                                <span class="text-display">Threaded Screws</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Threaded Nuts" href="https://en.nanotec.com/products/2322-threaded-nuts/">
+                                <span class="text-display">Threaded Nuts</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+
+                                                    
+                                            
+                                        
+                                            
+                                                
+                                                        
+    <ul>
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Gears" href="https://en.nanotec.com/products/160-gears/">
+                <span class="text-display">
+                    Gears
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Gears" href="https://en.nanotec.com/products/160-gears/">
+                    Gears
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Precision Planetary Gears" href="https://en.nanotec.com/products/2274-precision-planetary-gears/">
+                                <span class="text-display">Precision Planetary Gears</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Economy Planetary Gears" href="https://en.nanotec.com/products/2275-economy-planetary-gears/">
+                                <span class="text-display">Economy Planetary Gears</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Worm Gears" href="https://en.nanotec.com/products/2276-worm-gears/">
+                                <span class="text-display">Worm Gears</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Encoders" href="https://en.nanotec.com/products/159-encoder/">
+                <span class="text-display">
+                    Encoders
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Encoders" href="https://en.nanotec.com/products/159-encoder/">
+                    Encoders
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Optical Encoders" href="https://en.nanotec.com/products/2277-optical-encoders/">
+                                <span class="text-display">Optical Encoders</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Reflective Encoders" href="https://en.nanotec.com/products/2278-reflective-encoders/">
+                                <span class="text-display">Reflective Encoders</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Magnetic Encoders" href="https://en.nanotec.com/products/2279-magnetic-encoders/">
+                                <span class="text-display">Magnetic Encoders</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Brakes" href="https://en.nanotec.com/products/161-brakes/">
+                <span class="text-display">
+                    Brakes
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Brakes" href="https://en.nanotec.com/products/161-brakes/">
+                    Brakes
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                            
+                                        
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="BKE" href="https://en.nanotec.com/products/383-bke-brake/">
+                                <span class="text-display">BKE</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                            
+                                        
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="BWA" href="https://en.nanotec.com/products/1936-bwa-brake/">
+                                <span class="text-display">BWA</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Software" href="https://en.nanotec.com/products/2256-software/">
+                <span class="text-display">
+                    Software
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Software" href="https://en.nanotec.com/products/2256-software/">
+                    Software
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Plug &amp; Drive Studio" href="https://en.nanotec.com/products/2283-plug-drive-studio-software-for-stepper-motor-controllers-and-plug-drive-motors/">
+                                <span class="text-display">Plug &amp; Drive Studio</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="NanoPro" href="https://en.nanotec.com/products/2257-nanopro-control-software-for-stepper-motors-controllers-and-plug-drive-motors/">
+                                <span class="text-display">NanoPro</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="NanoCAN" href="https://en.nanotec.com/products/2282-nanocan-software-for-stepper-motor-controllers-and-plug-drive-motors/">
+                                <span class="text-display">NanoCAN</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="NanoJ Easy" href="https://en.nanotec.com/products/2284-nanoj-easy-software-for-stepper-motors-controllers-and-plug-drive-motors/">
+                                <span class="text-display">NanoJ Easy</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+        
+    </ul>
+
+                                                    
+                                            
+                                        
+                                            
+                                                
+                                                        
+    <ul>
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Accessories" href="https://en.nanotec.com/products/162-accessories/">
+                <span class="text-display">
+                    Accessories
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Accessories" href="https://en.nanotec.com/products/162-accessories/">
+                    Accessories
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Connection Cables" href="https://en.nanotec.com/products/283-connection-cables/">
+                                <span class="text-display">Connection Cables</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Damper" href="https://en.nanotec.com/products/288-damper/">
+                                <span class="text-display">Damper</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Capacitors" href="https://en.nanotec.com/products/1047-capacitors/">
+                                <span class="text-display">Capacitors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Electronics" href="https://en.nanotec.com/products/1272-electronics/">
+                                <span class="text-display">Electronics</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Converters" href="https://en.nanotec.com/products/1048-converters/">
+                                <span class="text-display">Converters</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Connectors" href="https://en.nanotec.com/products/1445-connectors/">
+                                <span class="text-display">Connectors</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Switch-Mode Power Supplies" href="https://en.nanotec.com/products/1049-switch-mode-power-supplies/">
+                                <span class="text-display">Switch-Mode Power Supplies</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Shaft Couplings" href="https://en.nanotec.com/products/1051-shaft-couplings/">
+                                <span class="text-display">Shaft Couplings</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Lubricant" href="https://en.nanotec.com/products/1050-lubricant/">
+                                <span class="text-display">Lubricant</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Spacer Sleeves" href="https://en.nanotec.com/products/1494-spacer-sleeves-spacer-sleeves/">
+                                <span class="text-display">Spacer Sleeves</span>
+                            </a>
+                            
+                                
+                                    <div class="menu level-3">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Supplements for GSGE Gears" href="https://en.nanotec.com/products/1263-supplements-for-gsge-gears-double-shaftcover/">
+                                <span class="text-display">Supplements for GSGE Gears</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+            
+        
+            
+                
+    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+    
+            
+        
+    <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Custom Solutions" href="https://en.nanotec.com/products/1486-custom-solutions/">
+                <span class="text-display">
+                    Custom Solutions
+                </span>
+    </a>
+    
+        
+            <div class="menu level-2">
+                <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                <a class="link-current" title="Custom Solutions" href="https://en.nanotec.com/products/1486-custom-solutions/">
+                    Custom Solutions
+                </a>
+                <ul>
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Shaft Machining" href="https://en.nanotec.com/products/1748-shaft-machining/">
+                                <span class="text-display">Shaft Machining</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Cable Assembly" href="https://en.nanotec.com/products/1749-cable-assembly/">
+                                <span class="text-display">Cable Assembly</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Custom Motors" href="https://en.nanotec.com/products/1750-custom-motors/">
+                                <span class="text-display">Custom Motors</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Hardware" href="https://en.nanotec.com/products/1751-hardware/">
+                                <span class="text-display">Hardware</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                        
+                            
+                                    
+                                
+                        
+                        
+                            <li class="nav-item ng-scope" main-navigation-item="">
+                            
+                                    
+                                
+                            <a ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" class="nav-link" title="Firmware" href="https://en.nanotec.com/products/1752-firmware/">
+                                <span class="text-display">Firmware</span>
+                            </a>
+                            
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        
+    
+    </li>
+
+            
+        
+    </ul>
+
+                                                    
+                                            
+                                        
+                                    </div>
+                                </div>
+                            
+                    </li>
+                
+                    <li class="nav-item has-menu active ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                        <a class="nav-link" title="Support" href="https://en.nanotec.com/support/" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)">Support</a>
+                        
+                                
+                                    <div class="menu">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/support/knowledge-base/" class="nav-link" title="Knowledge Base">
+                                                            <span class="text-display">Knowledge Base</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/support/returnsrma/" class="nav-link" title="Returns/RMA">
+                                                            <span class="text-display">Returns/RMA</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                    </li>
+                
+                    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                        <a class="nav-link" title="Downloads" href="https://en.nanotec.com/downloads/" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)">Downloads</a>
+                        
+                                
+                                    <div class="menu">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/downloads/catalogs-brochures/" class="nav-link" title="Catalogs &amp; Brochures">
+                                                            <span class="text-display">Catalogs &amp; Brochures</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/downloads/software/" class="nav-link" title="Software">
+                                                            <span class="text-display">Software</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/downloads/drivers/" class="nav-link" title="Drivers">
+                                                            <span class="text-display">Drivers</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/downloads/archive/" class="nav-link" title="Archive">
+                                                            <span class="text-display">Archive</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                    </li>
+                
+                    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                        <a class="nav-link" title="News &amp; Trade Shows" href="https://en.nanotec.com/news-trade-shows/" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)">News &amp; Trade Shows</a>
+                        
+                                
+                                    <div class="menu">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/news-trade-shows/news/" class="nav-link" title="News">
+                                                            <span class="text-display">News</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/news-trade-shows/trade-shows/" class="nav-link" title="Trade Shows">
+                                                            <span class="text-display">Trade Shows</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/news-trade-shows/newsletter/?no_cache=1" class="nav-link" title="Newsletter">
+                                                            <span class="text-display">Newsletter</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                    </li>
+                
+                    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                        <a class="nav-link" title="Company" href="https://en.nanotec.com/company/" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)">Company</a>
+                        
+                                
+                                    <div class="menu">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/company/about-nanotec/" class="nav-link" title="About Nanotec">
+                                                            <span class="text-display">About Nanotec</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/company/locations/" class="nav-link" title="Locations">
+                                                            <span class="text-display">Locations</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/company/integrated-management-system/" class="nav-link" title="Integrated Management System">
+                                                            <span class="text-display">Integrated Management System</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/company/job-opportunities/" class="nav-link" title="Job Opportunities">
+                                                            <span class="text-display">Job Opportunities</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/company/contact-us/" class="nav-link" title="Contact Us">
+                                                            <span class="text-display">Contact Us</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/company/research-funding/" class="nav-link" title="Research Funding">
+                                                            <span class="text-display">Research Funding</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                    </li>
+                
+                    <li class="nav-item has-menu ng-scope" ng-class="{&#39;is-open&#39;: mainNavigationItemCtrl.isOpen()}" main-navigation-item="">
+                        <a class="nav-link" title="Contact Us" href="https://en.nanotec.com/contact-us/" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)">Contact Us</a>
+                        
+                                
+                                    <div class="menu">
+                                        <span class="link-back" ng-click="mainNavigationItemCtrl.toggleMenuItem($event)" role="button" tabindex="0">Back</span>
+                                        <ul>
+                                            
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/contact-us/contact-us/" class="nav-link" title="Contact us">
+                                                            <span class="text-display">Contact us</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/contact-us/how-to-find-us/" class="nav-link" title="How to Find Us">
+                                                            <span class="text-display">How to Find Us</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li class="nav-item">
+                                                        <a href="https://en.nanotec.com/contact-us/returnsrma/" class="nav-link" title="Returns/RMA">
+                                                            <span class="text-display">Returns/RMA</span>
+                                                        </a>
+                                                    </li>
+                                                
+                                            
+                                        </ul>
+                                    </div>
+                                
+                            
+                    </li>
+                
+            </ul>
+        
+    </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+        
+    <div class="container">
+        <nav class="breadcrumb" role="navigation">
+            <ol>
+                <li>You are here:</li>
+                
+                    
+                        <li>
+                            <a href="https://en.nanotec.com/" title="Nanotec">Nanotec</a>
+                        </li>
+                    
+                        <li>
+                            <a href="https://en.nanotec.com/support/" title="Support">Support</a>
+                        </li>
+                    
+                        <li>
+                            <a href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206" title="Knowledge Base Pages">Knowledge Base Pages</a>
+                        </li>
+                    
+                        <li>
+                            <a href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/" title="Animation Brushless DC-Motors">Animation Brushless DC-Motors</a>
+                        </li>
+                    
+                
+
+                
+                
+
+                        
+                        
+                        
+                    
+            </ol>
+        </nav>
+    </div>
+
+        <main class="main-content" role="main">
+            <div class="container">
+                
+<div id="c1734" name="c1734">
+    
+            
+            
+    
+
+	
+		
+				
+			
+
+		
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h1 class="headline">Animation Brushless DC Motors</h1>
+    
+    
+    
+    
+    
+    
+
+
+
+
+		
+
+		
+
+
+
+
+		
+				
+			
+	
+
+
+    
+        
+        
+        
+            <p>This interactive, animated demonstration shows how Brushless DC Motors work.</p>
+        
+    
+
+        
+    
+
+
+</div>
+
+
+
+
+
+
+<div id="c5497" name="c5497">
+	
+
+	
+
+
+	
+	
+
+
+
+    
+    
+    
+        
+        
+            
+            <div class="bodyContainerWrapper">
+                <div class="bodyContainer">
+                    <div class="menuBackground">
+                        <div class="center">
+                            <ul class="dropDownMenu">
+                                <li><a href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206#" onclick="return false;">Stepper motor</a>
+                                    <ul>
+                                        <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_6lead_uni.html" target="ifrm">Unipolar</a></li>
+                                        <li><a href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206#">Bipolar</a>
+                                            <ul>
+                                                <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_4lead.html" target="ifrm">4 lead</a></li>
+                                                <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_6lead_biser.html" target="ifrm">6
+                                                    lead-seriell</a></li>
+                                                <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_6lead_bipar_1W.html" target="ifrm">6
+                                                    lead-1W</a></li>
+                                                <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_8lead_biser.html" target="ifrm">8
+                                                    lead-seriell</a></li>
+                                                <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_8lead_bipar.html" target="ifrm">8
+                                                    lead-parallel</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_micro.html" target="ifrm">Microstep</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206#" onclick="return false;">BLDC motors</a>
+                                    <ul>
+                                        <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_bldc_block_delta.html" target="ifrm">Block
+                                            delta</a></li>
+                                        <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_bldc_block_star.html" target="ifrm">Block star</a>
+                                        </li>
+                                        <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_bldc_block_sinus.html" target="ifrm">Block
+                                            sinus</a></li>
+                                        <li><a href="https://en.nanotec.com/typo3conf/ext/nanotec/Resources/Public/Animation/StepperMotor/En/motor_bldc_block_sensorless.html" target="ifrm">Block
+                                            sensorless</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <iframe name="ifrm" width="100%" height="550px" src="./Animation Brushless DC-Motors _ NANOTEC_files/motor_bldc_block_delta.html" frameborder="0" style="margin-top:20px; overflow:hidden" __idm_frm__="115"></iframe>
+                </div>
+            </div>
+        
+    
+
+
+
+	
+
+
+</div>
+
+
+            </div>
+        </main>
+    
+
+    <footer id="footer">
+        
+    <div class="f-top">
+        <div class="container">
+            
+                <div class="row">
+                    <div class="col-lg-4 ng-scope" footer-nav-item="">
+                        <h2 role="heading" ng-click="fMenuItem.toggleMenuItem($event)" tabindex="0">
+                            <a href="https://en.nanotec.com/products/">
+                                Products
+                            </a>
+                        </h2>
+                        
+                            <nav role="navigation" ng-class="{&#39;is-open&#39;: fMenuItem.isOpen()}">
+                                <ul>
+                                    
+                                        <li>
+                                            
+                                                
+                                                    <a href="https://en.nanotec.com/article-storage/product-finder/" title="Product Finder">Product Finder</a>
+                                                
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/156-brushless-dc-motors/" title="Brushless DC Motors">Brushless DC Motors</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/153-stepper-motors/" title="Stepper Motors">Stepper Motors</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/2262-motors-with-controller-brushless-dc-servo-motors-with-integrated-controller/" title="Motors with Controller">Motors with Controller</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/158-motor-controllers/" title="Motor Controllers">Motor Controllers</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/157-linear-drives/" title="Linear Actuators">Linear Actuators</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/2273-threaded-screws-nuts/" title="Threaded Screws &amp; Nuts">Threaded Screws &amp; Nuts</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/160-gears/" title="Gears">Gears</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/159-encoder/" title="Encoders">Encoders</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/161-brakes/" title="Brakes">Brakes</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/162-accessories/" title="Accessories">Accessories</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                
+                                                    <a href="https://en.nanotec.com/products/2256-software/" title="Software">Software</a>
+                                                
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                
+                                                    <a href="https://en.nanotec.com/article-storage/custom-solutions/" title="Custom Solutions">Custom Solutions</a>
+                                                
+                                                
+                                            
+                                        </li>
+                                    
+                                </ul>
+                            </nav>
+                        
+                    </div>
+                    
+                        <div class="col-lg-2 ng-scope" footer-nav-item="">
+                            <h2 role="heading" ng-click="fMenuItem.toggleMenuItem($event)" tabindex="0">
+                                <a href="https://en.nanotec.com/support/">Support</a>
+                            </h2>
+                            
+                                <nav role="navigation" ng-class="{&#39;is-open&#39;: fMenuItem.isOpen()}">
+                                    <ul>
+                                        
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/support/knowledge-base/" title="Knowledge Base">Knowledge Base</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/support/returnsrma/" title="Returns/RMA">Returns/RMA</a>
+                                                </li>
+                                            
+                                        
+                                    </ul>
+                                </nav>
+                                
+                            
+                        </div>
+                    
+                        <div class="col-lg-2 ng-scope" footer-nav-item="">
+                            <h2 role="heading" ng-click="fMenuItem.toggleMenuItem($event)" tabindex="0">
+                                <a href="https://en.nanotec.com/downloads/">Downloads</a>
+                            </h2>
+                            
+                                <nav role="navigation" ng-class="{&#39;is-open&#39;: fMenuItem.isOpen()}">
+                                    <ul>
+                                        
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/downloads/catalogs-brochures/" title="Catalogs &amp; Brochures">Catalogs &amp; Brochures</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/downloads/software/" title="Software">Software</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/downloads/drivers/" title="Drivers">Drivers</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/downloads/archive/" title="Archive">Archive</a>
+                                                </li>
+                                            
+                                        
+                                    </ul>
+                                </nav>
+                                
+                            
+                        </div>
+                    
+                        <div class="col-lg-2 ng-scope" footer-nav-item="">
+                            <h2 role="heading" ng-click="fMenuItem.toggleMenuItem($event)" tabindex="0">
+                                <a href="https://en.nanotec.com/news-trade-shows/">News &amp; Trade Shows</a>
+                            </h2>
+                            
+                                <nav role="navigation" ng-class="{&#39;is-open&#39;: fMenuItem.isOpen()}">
+                                    <ul>
+                                        
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/news-trade-shows/news/" title="News">News</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/news-trade-shows/trade-shows/" title="Trade Shows">Trade Shows</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/news-trade-shows/newsletter/?no_cache=1" title="Newsletter">Newsletter</a>
+                                                </li>
+                                            
+                                        
+                                    </ul>
+                                </nav>
+                                
+                            
+                        </div>
+                    
+                        <div class="col-lg-2 ng-scope" footer-nav-item="">
+                            <h2 role="heading" ng-click="fMenuItem.toggleMenuItem($event)" tabindex="0">
+                                <a href="https://en.nanotec.com/company/">Company</a>
+                            </h2>
+                            
+                                <nav role="navigation" ng-class="{&#39;is-open&#39;: fMenuItem.isOpen()}">
+                                    <ul>
+                                        
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/company/about-nanotec/" title="About Nanotec">About Nanotec</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/company/locations/" title="Locations">Locations</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/company/integrated-management-system/" title="Integrated Management System">Integrated Management System</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/company/job-opportunities/" title="Job Opportunities">Job Opportunities</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/company/contact-us/" title="Contact Us">Contact Us</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="https://en.nanotec.com/company/research-funding/" title="Research Funding">Research Funding</a>
+                                                </li>
+                                            
+                                        
+                                    </ul>
+                                </nav>
+                                
+                                    <figure class="f-logo">
+                                        <img src="./Animation Brushless DC-Motors _ NANOTEC_files/tuv_sud_logo.svg">
+                                    </figure>
+                                
+                            
+                        </div>
+                    
+                </div>
+            
+        </div>
+    </div>
+
+        <div class="f-bottom">
+            <div class="container">
+                <nav role="navigation">
+                    
+                        <ul>
+                            
+                                <li><a href="https://en.nanotec.com/service/home/" title="Home">Home</a></li>
+                            
+                                <li><a href="https://en.nanotec.com/service/all-products/" title="All products">All products</a></li>
+                            
+                                <li><a href="https://en.nanotec.com/service/newsletter/" title="Newsletter">Newsletter</a></li>
+                            
+                                <li><a href="https://en.nanotec.com/service/privacy-policy/" title="Privacy Policy">Privacy Policy</a></li>
+                            
+                                <li><a href="https://en.nanotec.com/service/general-terms-and-conditions/" title="General Terms and Conditions">General Terms and Conditions</a></li>
+                            
+                                <li><a href="https://en.nanotec.com/service/legal-details/" title="Legal Details">Legal Details</a></li>
+                            
+                        </ul>
+                    
+                </nav>
+                <div class="footer-info">
+                    
+                        
+<div id="c21" name="c21">
+    
+            
+            
+    
+
+
+    
+        
+        
+        
+            <p>Nanotec Electronic GmbH &amp; Co. KG, Kapellenstr. 6, 85622 Feldkirchen, Germany, Email: <a href="javascript:linkTo_UnCryptMailto(&#39;jxfiql7fkclXkxklqbz+ab&#39;);">info@nanotec.de</a>&nbsp;<br>Copyright © 1995-2017 by Nanotec Electronic GmbH &amp; Co KG, all rights reserved</p>
+        
+    
+
+        
+    
+
+
+</div>
+
+
+
+
+
+
+                    
+                </div>
+            </div>
+        </div>
+        
+    
+        <span basket="" class="ng-scope">
+            <div class="off-canvas-right" ng-class="{&#39;is-open&#39;: basket.isOpen()}" click-outside="basket.closeBasket()" outside-if-not="item-basket">
+                <div class="off-canvas-headline">
+                    Shopping Cart
+                    <i class="icon-close" ng-click="basket.toggleBasket()" role="button" tabindex="0"></i>
+                </div>
+                <div class="off-canvas-body">
+                    <div class="off-canvas-content off-canvas-basket">
+                        <!-- ngIf: basket.BasketService.basket.amount === 0 --><p class="alert alert-warning ng-scope" role="alert" ng-if="basket.BasketService.basket.amount === 0">
+                            Your basket is empty.</p><!-- end ngIf: basket.BasketService.basket.amount === 0 -->
+
+                        <!-- ngRepeat: lineItem in basket.BasketService.basket.lineItems -->
+
+                        <div ng-show="basket.BasketService.basket.amount &gt; 0" aria-hidden="true" class="ng-hide">
+                            <br>
+                            <a class="btn btn-tertiary btn-block" href="https://en.nanotec.com/basket-checkout/your-shopping-basket/">
+                                Checkout/Review/Share
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    <div class="modal fade" id="confirmClearLineItemModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="icon-close" aria-hidden="true"></i>
+                    </button>
+                    <h4 class="modal-title">Delete article from basket?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Please click "delete article" to delete this article from your basket:</p>
+                    <div class="media">
+                        <!-- ngIf: basket.lineItemOnTheBrink.imageSrc.length > 0 -->
+                        <div class="media-body">
+                            <h4 class="media-heading ng-binding"> x <!-- ngRepeat: article in basket.lineItemOnTheBrink.articles -->
+                            </h4>
+                            <span ng-bind-html="basket.lineItemOnTheBrink.articles[0].subtitle" class="ng-binding"></span><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white is-icon-right" data-dismiss="modal">
+                        Cancel
+                        <i class="icon-close-circle"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary" ng-click="basket.clearLineItemFromModal(&#39;confirmClearLineItemModal&#39;)">
+                        Clear article
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </span>
+    
+
+        
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <!-- run `gulp inject` to automatically populate bower script dependencies -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js scripts/app.js -->
+        <!-- inject:js -->
+        
+        
+        <!-- endinject -->
+
+        <!-- endbuild -->
+    
+    </footer>
+
+    <a href="https://en.nanotec.com/support/knowledge-base/animation-brushless-dc-motors/?tx_nanotec_animation%5Binitial%5D=motor_bldc_block_delta&amp;cHash=16dd715993449effcf3951fe40aaa206#" class="btn-to-top is-visible" title="To top" scroll-to-top=""></a>
+
+
+
+    <script type="text/javascript">
+        // @formatter:off
+        var domains = {
+            "en": "en.nanotec.com",
+            "de": "de.nanotec.com",
+            "cn": "cn.nanotec.com",
+            "us": "us.nanotec.com"
+        };
+        // formatter:on
+    </script>
+
+    <div domain-switcher="" class="ng-scope">
+        <div class="modal" id="domain-switcher-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    
+                    <div class="modal-header">
+                        <button id="stay-on-language-site" type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close" title="Close">
+                            <!-- ngIf: !domainSwitcherCtrl.forceMode --><i class="icon-close ng-scope" ng-click="domainSwitcherCtrl.stayOnSite()" ng-if="!domainSwitcherCtrl.forceMode" role="button" tabindex="0"></i><!-- end ngIf: !domainSwitcherCtrl.forceMode -->
+                        </button>
+                        <!-- ngIf: !domainSwitcherCtrl.forceMode --><h4 class="modal-title ng-scope" ng-if="!domainSwitcherCtrl.forceMode">Please Switch to another Domain</h4><!-- end ngIf: !domainSwitcherCtrl.forceMode -->
+                        <!-- ngIf: domainSwitcherCtrl.forceMode -->
+                    </div>
+                    <div class="modal-body">
+                        <!-- ngIf: !domainSwitcherCtrl.forceMode --><div ng-if="!domainSwitcherCtrl.forceMode" class="ng-scope"><p><strong>Dear Visitor,</strong>
+</p>
+<p>As a user from&nbsp;<strong class="ng-binding">Turkey</strong>, we would like to redirect you to our website <strong class="ng-binding">en.nanotec.com</strong>.
+</p>
+<p class="ng-binding">Please click on "stay on site", if do not want to switch to en.nanotec.com.</p></div><!-- end ngIf: !domainSwitcherCtrl.forceMode -->
+                        <!-- ngIf: domainSwitcherCtrl.forceMode -->
+                    </div>
+                    <div class="modal-footer">
+                        <!-- ngIf: !domainSwitcherCtrl.forceMode --><button type="button" class="btn btn-white ng-scope" data-dismiss="modal" ng-click="domainSwitcherCtrl.stayOnSite()" ng-if="!domainSwitcherCtrl.forceMode">No, stay on site
+                        </button><!-- end ngIf: !domainSwitcherCtrl.forceMode -->
+                        <a ng-href="//en.nanotec.com" class="btn btn-primary" href="https://en.nanotec.com/">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script type="text/javascript" src="./Animation Brushless DC-Motors _ NANOTEC_files/vhs-assets-f76182cc306a4761ff0607e63a806275.js.indir"></script>
+<script type="text/javascript" src="./Animation Brushless DC-Motors _ NANOTEC_files/vendor.js.indir"></script>
+<script type="text/javascript" src="./Animation Brushless DC-Motors _ NANOTEC_files/app.js.indir"></script>
+
+</body></html>

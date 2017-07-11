@@ -1,0 +1,147 @@
+/* ==================================================
+
+Tutorial Title:   Drop Down Menu with 3 Levels Deep
+Tutorial Link:    http://html-tuts.com/?p=8136
+
+=================================================== */
+
+/* Pre-set CSS to simulate a live website */
+.bodyContainerWrapper {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.headerContainerWrapper {
+    background: #FFF;
+}
+
+.center {
+    max-width: 871px;
+    margin: 0 auto;
+}
+
+.headerContainer, .bodyContainer, .footerContainer {
+    max-width: 871px;
+    margin: 0 auto;
+    background: #FFF;
+}
+
+.padding {
+    padding: 20px;
+}
+
+.bodyContainer {
+    /*min-height: 500px;*/
+    height: auto;
+
+}
+
+/* Menu General Styles */
+.bodyContainerWrapper .menuBackground {
+    background: #003a81;
+    text-align: left; /* or change the value to left to align left*/
+}
+
+.bodyContainerWrapper .dropDownMenu a {
+    color: #FFF;
+}
+
+.bodyContainerWrapper .dropDownMenu,
+.bodyContainerWrapper .dropDownMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bodyContainerWrapper .dropDownMenu li {
+    position: relative;
+}
+
+.bodyContainerWrapper .dropDownMenu a {
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.bodyContainerWrapper .dropDownMenu a:hover {
+    background: #6699cc;
+}
+
+/* Level 1 Drop Down Menu */
+.bodyContainerWrapper .dropDownMenu > li {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -4px; /* solve the 4 pixels spacing between list-items */
+}
+
+.bodyContainerWrapper .dropDownMenu > li:first-child {
+    margin-left: 0;
+}
+
+.bodyContainerWrapper .dropDownMenu > li > a {
+}
+
+.bodyContainerWrapper .dropDownMenu > li > a:hover {
+}
+
+/* Level 2 */
+.bodyContainerWrapper .dropDownMenu > li > ul {
+    text-align: left;
+    width: 150px; /* change auto value with 200px if you want a bigger menu */
+    display: none;
+    background: #FFF;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999999; /* if you have YouTube iframes, is good to have a bigger z-index so the video can appear above the video */
+    border: solid 1px #6699cc;
+}
+
+.bodyContainerWrapper .dropDownMenu > li > ul a {
+    color: #000;
+}
+
+.bodyContainerWrapper .dropDownMenu > li:hover > ul {
+    display: block;
+}
+
+.bodyContainerWrapper .dropDownMenu ul li a {
+}
+
+.bodyContainerWrapper .dropDownMenu ul li a:hover {
+}
+
+/* Level 3 */
+.dropDownMenu > li > ul > li > ul {
+    text-align: left;
+    width: 150px;
+    display: none;
+    background: #FFF;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 9999999;
+    border: solid 1px #6699cc;
+}
+
+.dropDownMenu > li > ul > li > ul a {
+    color: #000;
+}
+
+.dropDownMenu > li > ul > li:hover > ul {
+    display: block;
+}
+
+.dropDownMenu ul ul li {
+}
+
+.dropDownMenu ul ul li a {
+}
+
+.dropDownMenu ul ul li a:hover {
+}
+
+
