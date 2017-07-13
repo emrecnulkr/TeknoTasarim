@@ -1,0 +1,10 @@
+1 x Pololu compatible stepper driver
+1 x MP1584 DCDC Module (eg. http://www.ebay.com/itm/Mini-3A-DC-DC-Adjustable-Step-down-Converter-Standard-Power-module-LM2596-/171381727503 )
+2 x 100R resistor
+2 x 1M resistor
+1 x 4K7 resistor
+2 x 47uF 35V electrolytic capacitor
+1 x 1N4004 diode (or similar)
+2 x VN10LP (or 2N7000 or BS170)
+5 x 5.0mm pitch PCB terminal block 2 way
+1 x 2.54 pitch female header 2 x 8 way
