@@ -1,0 +1,145 @@
+.carousel-wrapper {
+  overflow: hidden;
+}
+
+.carousel-item {
+  float: left;
+}
+
+.arrow {
+  display: block;
+  height: 40px;
+  position: absolute;
+  width: 20px;
+  z-index: 10;
+}
+
+.arrow.left {
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.bevel {
+  -moz-box-shadow: -2px -2px 10px rgba(0, 0, 0, .5) inset, 2px 2px 10px #fff inset;
+  -webkit-box-shadow: -2px -2px 10px rgba(0, 0, 0, .5) inset, 2px 2px 10px #fff inset;
+  box-shadow: -2px -2px 10px rgba(0, 0, 0, .5) inset, 2px 2px 10px #fff inset;
+}
+
+.shadow {
+  -moz-box-shadow: 0 2px 2px #333;
+  -webkit-box-shadow: 0 2px 2px #333;
+  box-shadow: 0 2px 2px #333;
+}
+
+.shadow.bevel {
+  -moz-box-shadow: -2px -2px 10px rgba(0, 0, 0, .5) inset, 2px 2px 10px #fff inset, 0 2px 2px #333;
+  -webkit-box-shadow: -2px -2px 10px rgba(0, 0, 0, .5) inset, 2px 2px 10px #fff inset, 0 2px 2px #333;
+  box-shadow: -2px -2px 10px rgba(0, 0, 0, .5) inset, 2px 2px 10px #fff inset, 0 2px 2px #333;
+}
+
+.transition {
+  -moz-transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+  -webkit-transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.transition.fast {
+  -moz-transition: all 1s cubic-bezier(1, 0, 0, 1);
+  -webkit-transition: all 1s cubic-bezier(1, 0, 0, 1);
+  transition: all 1s cubic-bezier(1, 0, 0, 1);
+}
+
+.logo {
+  overflow: visible !important;
+  position: relative;
+}
+
+.logo img {
+  vertical-align: top;
+}
+
+.productDetails {
+  padding: 0 2px;
+}
+
+.disclaimer {
+  color: #434343;
+  font-size: 8px;
+}
+
+.button {
+  display: block;
+  font-size: 15px;
+  line-height: normal;
+  padding: 0 5px;
+}
+
+.button span {
+  padding: 0 0 3px;
+}
+
+.product-price > div {
+  display: block;
+  float: left;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.product-price > div:first-child {
+  padding-right: 2px;
+}
+
+.details > div {
+  height: 50%;
+  width: 100%;
+}
+
+.details .product-price {
+  height: 100%
+}
+
+.productName.no-price {
+  height: 99%;
+}
+
+.product-price.not-alone {
+  height: 48%;
+  position: relative;
+  top: -2px;
+}
+
+.productImage {
+  position: relative;
+}
+
+.productImage.no-btn {
+  height: 100%;
+}
+
+.product-price > .no-prefix {
+  width: 100%;
+}
+
+.img-btn > div {
+  background: rgba(255, 255, 255, .9);
+  height: 100%;
+  width: 100%;
+}
+
+.image .carousel-bg,
+.image.layout {
+  background: transparent;
+  border-bottom: none;
+}
+
+.layout, .background, .background-underlay {
+  position: absolute;
+}
+
+.image .background {
+  background-size: contain;
+  background-repeat: no-repeat;
+}

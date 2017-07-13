@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://mustafatekdemir.com/raspberry-pi-esp/781/ -->
+<html lang="tr-TR"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>Raspberry Pi Linux Komutları | MUSTAFA TEKDEMİR</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://mustafatekdemir.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://mustafatekdemir.com/wp-content/themes/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="MUSTAFA TEKDEMİR » beslemesi" href="http://mustafatekdemir.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="MUSTAFA TEKDEMİR » yorum beslemesi" href="http://mustafatekdemir.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="MUSTAFA TEKDEMİR » Raspberry Pi Linux Komutları yorum beslemesi" href="http://mustafatekdemir.com/raspberry-pi-esp/781/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/mustafatekdemir.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/wp-emoji-release.min.js.indir" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="crayon-css" href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-classic-css" href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/classic.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="counter-style-css" href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/counter-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-syntax-css-css" href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/wp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentytwelve-fonts-css" href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="twentytwelve-style-css" href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='http://mustafatekdemir.com/wp-content/themes/twentytwelve/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="dtree.css-css" href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/wp-dtree.min.css" type="text/css" media="all">
+<!--[if lte IE 6]> <style type="text/css">.cantembedplus{display:none;}</style><![endif]--><script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/jquery.js.indir"></script>
+<script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/jquery-migrate.min.js.indir"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/mustafatekdemir.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"%s ile Kopyala, %s ile Yap\u0131\u015ft\u0131r","minimize":"Kodu Geni\u015fletmek \u0130\u00e7in T\u0131kla"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/crayon.min.js.indir"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pagevisit = {"ajaxurl":"http:\/\/mustafatekdemir.com\/wp-admin\/admin-ajax.php","pageurl":"http:\/\/mustafatekdemir.com\/raspberry-pi-esp\/781"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/custom.js.indir"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPdTreeSettings = {"animate":"1","duration":"250","imgurl":"http:\/\/mustafatekdemir.com\/wp-content\/plugins\/wp-dtree-30\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/wp-dtree.min.js.indir"></script>
+<link rel="https://api.w.org/" href="http://mustafatekdemir.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://mustafatekdemir.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://mustafatekdemir.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="STM32F0 Tüm Birimler İçin Örnekler(2.Bölüm)" href="http://mustafatekdemir.com/stm32-2/stm32f0-tum-birimler-icin-ornekler2-bolum/">
+<link rel="next" title="STM32 Yazılım Derleme Saati RTC Örneği" href="http://mustafatekdemir.com/stm32-2/stm32-rtc-iar-derleme-saati/">
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="canonical" href="http://mustafatekdemir.com/raspberry-pi-esp/781/">
+<link rel="shortlink" href="http://mustafatekdemir.com/?p=781">
+<link rel="alternate" type="application/json+oembed" href="http://mustafatekdemir.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmustafatekdemir.com%2Fraspberry-pi-esp%2F781%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://mustafatekdemir.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmustafatekdemir.com%2Fraspberry-pi-esp%2F781%2F&amp;format=xml">
+<meta property="og:locale" content="en_US">
+				<meta property="og:title" content="Raspberry Pi Linux Komutları | Total Visits 2791 | MUSTAFA TEKDEMİR">
+				<meta property="og:url" content="http://mustafatekdemir.com/781/">
+				<meta property="og:site_name" content="MUSTAFA TEKDEMİR">
+				<meta name="twitter:card" content="summary_large_image">
+				<meta name="twitter:title" content="Raspberry Pi Linux Komutları | Total Visits 2791 | MUSTAFA TEKDEMİR">
+				<script type="text/javascript">
+<!--
+/******************************************************************************
+***   COPY PROTECTED BY http://chetangole.com/blog/wp-copyprotect/   version 3.1.0 ****
+******************************************************************************/
+function clickIE4(){
+if (event.button==2){
+return false;
+}
+}
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+return false;
+}
+}
+}
+
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+
+document.oncontextmenu=new Function("return false")
+// --> 
+</script>
+
+
+<style type="text/css"></style>
+
+<style type="text/css">
+.synved-social-resolution-single {
+display: inline-block;
+}
+.synved-social-resolution-normal {
+display: inline-block;
+}
+.synved-social-resolution-hidef {
+display: none;
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx),
+only screen and (min-resolution: 192dpi) {
+	.synved-social-resolution-normal {
+	display: none;
+	}
+	.synved-social-resolution-hidef {
+	display: inline-block;
+	}
+}
+</style>
+</head>
+
+<body class="post-template-default single single-post postid-781 single-format-standard custom-font-enabled single-author">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="http://mustafatekdemir.com/" title="MUSTAFA TEKDEMİR" rel="home">MUSTAFA TEKDEMİR</a></h1>
+			<h2 class="site-description">Dünyayı değiştirmeye ne dersin?</h2>
+		</hgroup>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle">Menü</button>
+			<a class="assistive-text" href="http://mustafatekdemir.com/raspberry-pi-esp/781/#content" title="İçeriğe geç">İçeriğe geç</a>
+			<div class="nav-menu"><ul>
+<li><a href="http://mustafatekdemir.com/">Başlangıç</a></li><li class="page_item page-item-2"><a href="http://mustafatekdemir.com/about/">Hakkımda</a></li>
+</ul></div>
+		</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			
+				
+	<article id="post-781" class="post-781 post type-post status-publish format-standard hentry category-raspberry-pi-esp tag-basic tag-command tag-klasor tag-komut tag-linux tag-ls tag-pi tag-raspberry tag-temel">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">Raspberry Pi Linux Komutları</h1>
+										<div class="comments-link">
+					<a href="http://mustafatekdemir.com/raspberry-pi-esp/781/#respond"><span class="leave-reply">Bir yanıt bırakın</span></a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Raspberry pi kullanıcılarının Linux Debian işletim sisteminde kullanabilecekleri temel terminal komutları aşağıda listelenmiştir. Bende yeni başlayan biri olarak sürekli yararlandığım komutları başka sitelerden araştırdıklarımı blog’um da yayınlamak istedim. Bu blog’u kurma amacımın not defteri gibi kullanırken başkalarınında yararlanmasını sağlamak olduğunu tekrarlayayım.</p>
+<p><a href="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/raspi-term-test1.png"><img class="alignnone size-full wp-image-784" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/raspi-term-test1.png" alt="raspi-term-test1" width="683" height="768" srcset="http://mustafatekdemir.com/wp-content/uploads/2016/11/raspi-term-test1.png 683w, http://mustafatekdemir.com/wp-content/uploads/2016/11/raspi-term-test1-267x300.png 267w, http://mustafatekdemir.com/wp-content/uploads/2016/11/raspi-term-test1-624x702.png 624w" sizes="(max-width: 683px) 100vw, 683px"></a></p>
+<p><strong><span id="more-781"></span>CD</strong></p>
+<p style="text-align: justify;">cd .. &nbsp;// ilgili dosyadan bir önceki alt klasöre geçmeyi sağlar</p>
+<p style="text-align: justify;">cd /home/pi/MustafaExam &nbsp; // MustafaExam klasörünü açmayı sağlar</p>
+<p style="text-align: justify;">cd MustafaExam &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Yol vermeden direk dosyayı açmayı sağlar<br>
+<span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p style="text-align: justify;"><strong>PWD</strong></p>
+<p>Geçerli dizini ekrana yazar. &nbsp; &nbsp;/home/pi.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">MKDIR</strong></p>
+<p>Yeni dizin oluşturmak için kullanılır. Örnek:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb0592778629353" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">mkdir "../../Klasör/Yeni Klasör"</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb0592778629353-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb0592778629353-1"><span class="crayon-i">mkdir</span><span class="crayon-h"> </span><span class="crayon-s">"../../Klasör/Yeni Klasör"</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0007 seconds] -->
+<p>Bu komut iki üst klasördeki Klasör klasöründe Yeni Klasör adıyla bir klasör oluşturur.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">RMDIR</strong></p>
+<p>Dizin silmek için kullanılır. Ancak silinecek dizinin içinin boş olması gerekir. Örnek:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb059e823326872" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">rmdir "../../Klasör/Yeni Klasör"</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb059e823326872-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb059e823326872-1"><span class="crayon-i">rmdir</span><span class="crayon-h"> </span><span class="crayon-s">"../../Klasör/Yeni Klasör"</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p>Bu komutla az önce oluşturduğumuz klasörü sildik.</p>
+<p><b>NOT:</b> Bu komut klasörleri çöp kutusuna taşımadan, direkt olarak siler.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">RM</strong></p>
+<p>Dosya silmeye yarar. Örnek:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05a4768087102" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">rm Deneme/Ornek.txt Ornek.txt Ornek2.txt</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05a4768087102-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05a4768087102-1"><span class="crayon-e">rm </span><span class="crayon-v">Deneme</span><span class="crayon-o">/</span><span class="crayon-v">Ornek</span><span class="crayon-sy">.</span><span class="crayon-e">txt </span><span class="crayon-v">Ornek</span><span class="crayon-sy">.</span><span class="crayon-e">txt </span><span class="crayon-v">Ornek2</span><span class="crayon-sy">.</span><span class="crayon-v">txt</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0009 seconds] -->
+<p>Bu komutla şimdiye kadar oluşturduğumuz bütün dosyaları sildik. Bu komut silmeden önce onay ister. y yazıp enter’a basarsak silinir, n yazıp enter’a basarsak silinmez. Yine rmdir’de olduğu gibi bu komutta da dosyalar çöp kutusuna taşınmadan, direkt olarak silinir.</p>
+<p><b>NOT:</b> Bu komutta olduğu gibi rmdir, touch, mkdir, cp ve mv komutlarında da çoklu dosya/klasör belirtme yöntemini kullanabilirsiniz. Örnekler:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05a8557358704" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">rmdir "Yeni Dizin" "Yeni Dizin_1" "Yeni Dizin_2"
+touch dosya1.txt dosya2.txt
+cp dosya1.txt dosya2.txt Resimler</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05a8557358704-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5965c1feb05a8557358704-2">2</div><div class="crayon-num" data-line="crayon-5965c1feb05a8557358704-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05a8557358704-1"><span class="crayon-i">rmdir</span><span class="crayon-h"> </span><span class="crayon-s">"Yeni Dizin"</span><span class="crayon-h"> </span><span class="crayon-s">"Yeni Dizin_1"</span><span class="crayon-h"> </span><span class="crayon-s">"Yeni Dizin_2"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5965c1feb05a8557358704-2"><span class="crayon-e">touch </span><span class="crayon-v">dosya1</span><span class="crayon-sy">.</span><span class="crayon-e">txt </span><span class="crayon-v">dosya2</span><span class="crayon-sy">.</span><span class="crayon-e">txt</span></div><div class="crayon-line" id="crayon-5965c1feb05a8557358704-3"><span class="crayon-e">cp </span><span class="crayon-v">dosya1</span><span class="crayon-sy">.</span><span class="crayon-e">txt </span><span class="crayon-v">dosya2</span><span class="crayon-sy">.</span><span class="crayon-e">txt </span><span class="crayon-v">Resimler</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0015 seconds] -->
+<p>Birinci komutta aktif dizindeki Yeni Dizin, Yeni Dizin_1 ve Yeni Dizin_2 klasörleri silinir. İkinci komutta aktif klasörde dosya1.txt ve dosya2.txt dosyaları oluşturulur. Son örnekte de bu oluşturulan dosyalar aktif klasördeki Resimler klasörüne kopyalanır.</p>
+<p><b>NOT:</b> rmdir komutu rm’den farklı olarak silme için onay istemez ve klasörlerin içinin boş olması gerekir.</p>
+<p><b>NOT:</b> cp ve mv komutlarıyla en sık yaşayabileceğimiz aksilik hedef klasörde zaten aynı isimde dosya olmasıdır. Bu durumda komut istemi “Üstüne yazılsın mı?” diye sorar. y yazıp enter’a basarsanız üzerine yazılır, n yazıp enter’a basarsanız kopyalama/taşıma gerçekleşmez. Ancak bu durum touch ve mkdir için geçerli değildir. Bu komutlar benzer bir durumla karşılaştığında dosya/klasör oluşturulmaz. Eğer çoklu dosya/klasör belirtme yöntemini kullanmışsak bu durumda bu aksilik yalnızca ilgili dosya/klasörü etkiler, komutun çalışmasını tümden bitirmez.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<h2><span id="chown" class="mw-headline">chown</span></h2>
+<p>Bir dosya veya klasörün sahibini (kullanıcı olarak) değiştirmeye yarar. İstenirse çoklu dosya/klasör belirtimi yapılabilir. Örnek:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05ae860391479" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">chown ayse Klasor dosya.txt</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05ae860391479-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05ae860391479-1"><span class="crayon-e">chown </span><span class="crayon-e">ayse </span><span class="crayon-e">Klasor </span><span class="crayon-v">dosya</span><span class="crayon-sy">.</span><span class="crayon-v">txt</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0007 seconds] -->
+<p>Bu komutla aktif klasördeki Klasor klasörünün ve dosya.txt dosyasının sahibi ayse olarak değiştirilir.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">CP</strong></p>
+<p>cp komutu dosya kopyalamaya yarar. Örnek:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05b3450247522" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">cp Deneme/Ornek.txt .</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05b3450247522-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05b3450247522-1"><span class="crayon-e">cp </span><span class="crayon-v">Deneme</span><span class="crayon-o">/</span><span class="crayon-v">Ornek</span><span class="crayon-sy">.</span><span class="crayon-i">txt</span><span class="crayon-h"> </span><span class="crayon-sy">.</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p>Bu komut aktif klasördeki Deneme klasöründeki Ornek.txt dosyasını (az önce oluşturduğumuz dosya) geçerli klasöre kopyalar.</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05bb881383997" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">cp Deneme/Ornek.txt Ornek2.txt</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05bb881383997-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05bb881383997-1"><span class="crayon-e">cp </span><span class="crayon-v">Deneme</span><span class="crayon-o">/</span><span class="crayon-v">Ornek</span><span class="crayon-sy">.</span><span class="crayon-e">txt </span><span class="crayon-v">Ornek2</span><span class="crayon-sy">.</span><span class="crayon-v">txt</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p>Bu komut ise aynı işlemi dosyanın ismini Ornek2.txt olarak değiştirerek yapar. (klasör belirtmediğimizde aktif klasör sayılıyordu)</p>
+<p><b>NOT:</b> cp komutu klasör kopyalayamaz. Sadece dosya kopyalayabilir.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">MV</strong></p>
+<p>Dosya taşımaya yarar. Dosyaları kopyalamak yerine taşıması haricinde cp ile aynı özelliklere sahiptir.Dosya ismi değiştirmeye de yarar.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">TOUCH</strong></p>
+<p>Boş bir dosya oluşturur. Örnek:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05c0762127848" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">touch Deneme/Ornek.txt</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05c0762127848-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05c0762127848-1"><span class="crayon-e">touch </span><span class="crayon-v">Deneme</span><span class="crayon-o">/</span><span class="crayon-v">Ornek</span><span class="crayon-sy">.</span><span class="crayon-v">txt</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p>Bu komut aktif klasördeki Deneme klasöründe Ornek.txt isminde boş bir dosya oluşturur.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">CAT</strong></p>
+<p>Lists the contents of file(s), e.g. cat thisFile will display the contents of thisFile.<br>
+Can be used to list the contents of multiple files, i.e. cat *.txt will list the contents of all .txt files in the current directory.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">HEAD</strong></p>
+<p>Displays the beginning of a file. Can be used with -n to specify the number of lines to show (by default 10), or with -c to specify the number of bytes.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">TAIL</strong></p>
+<p>Displays the end of a file. The starting point in the file can be specified either through -b for 512 byte blocks, -c for bytes, or -n for number of lines.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">CHMOD</strong></p>
+<p>Normally used to change the permissions for a file. The chmod command can use symbols u (user that owns the file),<br>
+g (the files group) , o (other users) and the permissions r (read), w (write) and x (execute). Using chmod u+x *filename* will add execute permission for the owner of the file.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">CHOWN</strong></p>
+<p>Bir dosya veya klasörün sahibini (kullanıcı olarak) değiştirmeye yarar. İstenirse çoklu dosya/klasör belirtimi yapılabilir. Örnek:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05c7505639496" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">chown ayse Klasor dosya.txt</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05c7505639496-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05c7505639496-1"><span class="crayon-e">chown </span><span class="crayon-e">ayse </span><span class="crayon-e">Klasor </span><span class="crayon-v">dosya</span><span class="crayon-sy">.</span><span class="crayon-v">txt</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0007 seconds] -->
+<p>Bu komutla aktif klasördeki Klasor klasörünün ve dosya.txt dosyasının sahibi ayse olarak değiştirilir.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">SSH</strong></p>
+<p>Secure shell. Connect to another computer using an encrypted network connection. For more details see SSH (secure shell)</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">SCP</strong></p>
+<p>Copies a file from one computer to another using ssh. For more details see SCP (secure copy)</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">SUDO</strong></p>
+<p>Run a command as a superuser, or another user. Use sudo -s for a superuser shell. For more details see Root user / sudo</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">DD</strong></p>
+<p>Copies a file converting the file as specified. It is often used to copy an entire disk to<br>
+a single file or back again eg. dd if=/dev/sdd of=backup.img will create a backup image from an<br>
+SD card or USB disk drive at /dev/sdd. Make sure to use the correct drive when copying an image to the SD card as it can overwrite the entire disk.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">DF</strong></p>
+<p>Display the disk space available and used on the mounted filesystems. Use df -h to see the output in a human readable<br>
+format using M for MBs rather than showing number of bytes.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">UNZIP</strong></p>
+<p>Extracts the files from a compressed zip file.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">TAR</strong></p>
+<p>Store or extract files from a tape archive file. It can also reduce the space required by compressing the file similar to a zip file.</p>
+<p>To create a compressed file use tar -cvzf *filename.tar.gz* *directory/* To extract the contents of a file use tar -xvzf *filename.tar.gz* “(*/)burası kullanılmıyor”</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">PIPES</strong></p>
+<p>A pipe allows the output from one command to be used as the input for another command.<br>
+The pipe symbol is a vertical line |. For example to only show the first 10 entries of the<br>
+ls command it can be piped through the head command ls | head</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">TREE</strong></p>
+<p>Show a directory and all subdirectories and files indented as a tree structure.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">&amp;</strong></p>
+<p>Run a command in the background freeing up the shell for future commands.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">WGET</strong></p>
+<p>Download a file from the web directly to the computer e.g. wget http://www.raspberrypi.org/documentation/linux/usage/commands.md will download this file to your computer as commands.md</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">CURL</strong></p>
+<p>Download or upload a file to/from a server. By default it will output the file contents of the file to the screen.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">MAN</strong></p>
+<p>Show the manual page for a file. To find out more run man man to view the manual page of the man command.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">SEARCH</strong></p>
+<p><strong>GREP</strong></p>
+<p>Search inside files for certain search patterns e.g. grep “search” *.txt will look in all the files in the current directory ending with .txt for the string search.</p>
+<p>Supports regular expressions which allows special letter combinations to be included in the search.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">AWK</strong></p>
+<p>Programming language useful for searching and manipulating text files.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">FIND</strong></p>
+<p>Searches a directory and subdirectories for files matching certain patterns.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">WHEREIS</strong></p>
+<p>Finds the location of a command. Looks through standard program locations until it finds the requested command.</p>
+<p><strong>NETWORKING</strong><br>
+<strong>PING</strong></p>
+<p>Utility usually used to check if communication can be made with another host.<br>
+Can be used with default settings by just specifying a hostname (e.g. ping raspberrypi.org) or an IP address (e.g. ping 8.8.8.8).<br>
+Can specify the number of packets to send with the -c flag.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">NMAP</strong></p>
+<p>Network exploration and scanning tool. Can return port and OS information about a host or a range of hosts.<br>
+Running just nmap will display the options available as well as example usage.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">HOSTNAME</strong></p>
+<p>Displays the current hostname of the system. A privileged (super) user can set the hostname to<br>
+a new one by supplying it as an argument (e.g. hostname new-host).</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p><strong style="font-size: 1rem;">IFCONFIG</strong></p>
+<p>Ifconfig’ in yaygın kullanımı, <a title="IP adresi" href="https://tr.wikipedia.org/wiki/IP_adresi">IP Adres</a> ve ağmaskesi yapılandırması ve belirli bir arabirimi etkinleştirme veya devre dışı bırakmayı içerir.</p>
+<p>Raspberry Pi’nizin ip adresini öğrenmek için;</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05d4047495003" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">ifconfig | grep inet</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05d4047495003-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05d4047495003-1"><span class="crayon-v">ifconfig</span><span class="crayon-h"> </span><span class="crayon-o">|</span><span class="crayon-h"> </span><span class="crayon-e">grep </span><span class="crayon-v">inet</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p></p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<h2><span id="tar" class="mw-headline">tar</span></h2>
+<p>tar, Linux’ta dosya/klasör arşivlemeye yarayan bir komuttur. Yani Windows’taki Winrar’a benzer. Ancak dikkat: bu komut bir veya birden fazla dosya veya klasörü bir arşiv dosyası içinde saklamaya yarar. Sıkıştırma yapmaz. Örnek kullanım:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05d9294131456" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">tar cvf yedek.tar dosya.pdf deneme.txt Klasor</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05d9294131456-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05d9294131456-1"><span class="crayon-e">tar </span><span class="crayon-e">cvf </span><span class="crayon-v">yedek</span><span class="crayon-sy">.</span><span class="crayon-e">tar </span><span class="crayon-v">dosya</span><span class="crayon-sy">.</span><span class="crayon-e">pdf </span><span class="crayon-v">deneme</span><span class="crayon-sy">.</span><span class="crayon-e">txt </span><span class="crayon-v">Klasor</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0009 seconds] -->
+<p>Bu komutla dosya.pdf, deneme.txt dosyaları ve Klasor klasörü yedek.tar dosyasında arşivlenir. Elbette ki dolaylı olarak Klasor klasöründeki dosya ve klasörler de bu arşive girmiştir. Şimdi şu komutu vererek arşivdeki dosya ve klasörleri dışarı çıkaralım:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05de700635924" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">tar xvf yedek.tar</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05de700635924-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05de700635924-1"><span class="crayon-e">tar </span><span class="crayon-e">xvf </span><span class="crayon-v">yedek</span><span class="crayon-sy">.</span><span class="crayon-v">tar</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0007 seconds] -->
+<p>Bu komut yedek.tar dosyasındaki tüm dosya ve klasörleri aktif klasöre çıkaracaktır.</p>
+<p><b>tar komutu parametreleri</b></p>
+<p>-c Create: tar dosyasının yaratılacağını belirtir.</p>
+<p>-x Extract: bir tar dosyasının açılacağını belirtir.</p>
+<p>-t Tabel of contents: bir tar dosyasının iceriğinin listeleneceğini belirtir.</p>
+<p>-v Verbose: bir tar dosyasının yaratılırken ya da açılırken elden geçen dosyaların isimlerini ekrana listelemek icin kullanılır.</p>
+<p>-z tar dosyasinin sıkıştırılmış bir dosya olarak kullanılacağını belirtir.Gunzip kullanılacaktır.</p>
+<p>-f File: yaratılacak,açılacak ya da içindekiler tablosu listelenecek tar dosyasının adının komut satırında verileceğini belirtir.</p>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<div id="mw-content-text" class="mw-content-ltr" dir="ltr" lang="tr">
+<h2><span id="gzip" class="mw-headline">gzip</span></h2>
+<p>tar dosyalarını sıkıştırmaya yarar. Örnek:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05e3554675880" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">gzip yedek.tar</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05e3554675880-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05e3554675880-1"><span class="crayon-e">gzip </span><span class="crayon-v">yedek</span><span class="crayon-sy">.</span><span class="crayon-v">tar</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0007 seconds] -->
+<p>Bu komutla yedek.tar dosyanızın adı artık yedek.tar.gz olur. Bu yöntem dosyalarınızı az da olsa sıkıştırmaya yarar. Benim arşivimi 40.8 MB’tan 40.4 MB’a sıkıştırdı&nbsp;<img draggable="false" class="emoji" alt="🙂" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/1f642.svg"> Şimdi bu sıkıştırdığımız arşivi eski haline getirelim:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05e7544835748" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">gzip -d yedek.tar.gz</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05e7544835748-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05e7544835748-1"><span class="crayon-v">gzip</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">d</span><span class="crayon-h"> </span><span class="crayon-v">yedek</span><span class="crayon-sy">.</span><span class="crayon-v">tar</span><span class="crayon-sy">.</span><span class="crayon-v">gz</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p>
+</p></div>
+<p style="text-align: justify;"><span style="color: #ff9900;"><strong>————————————————————————————————————————————–</strong></span></p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5965c1feb05ec609029567" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Satır Numaralarına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Düz Koda Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Satır Sarımına Geç"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Kodu Genişlet"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Kodu Yeni Pencerede Aç"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">pi@raspberrypi ~ $ cd /home/pi/MustafaExam/ --&gt;ilgili klasörü açma
+pi@raspberrypi ~/MustafaExam $ sudo nano main.c --&gt;ilgili klasör içindeki dosyayı açma
+------------------------------------------------------------------------------------
+sudo gcc main.c -o myfirstcprogram --&gt; main.c dosyasını gcc ile derleme 
+------------------------------------------------------------------------------------
+pi@raspberrypi ~ $  cd wiringPi 
+pi@raspberrypi ~/wiringPi $  ls --&gt; ilgili klasör içindeki dosyaları listeler 
+------------------------------------------------------------------------------------ 
+pi@raspberrypi ~ $ sudo apt-get update --&gt; uygulamaların yeni dosyaları günceller 
+pi@raspberrypi ~ $ sudo apt-get upgrade --&gt; uygulamaların indirilien dosyalar güncellenir
+------------------------------------------------------------------------------------
+pi@raspberrypi ~ $ git clone git://git.drogon.net/wiringPi --&gt; link'teki dosyaları kopyalar 
+pi@raspberrypi ~ $ sudo wget https://dl.dropboxusercontent.com/u/80256631/mt7601-3.18.11-v7-776.tar.gz --&gt; ilgili adresteki dosyayı yükler 
+pi@raspberrypi ~ $ sudo apt-get install wget --&gt; wget komutunu kullıması için uygulamalayı yüklüyoruz</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5965c1feb05ec609029567-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5965c1feb05ec609029567-2">2</div><div class="crayon-num" data-line="crayon-5965c1feb05ec609029567-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5965c1feb05ec609029567-4">4</div><div class="crayon-num" data-line="crayon-5965c1feb05ec609029567-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5965c1feb05ec609029567-6">6</div><div class="crayon-num" data-line="crayon-5965c1feb05ec609029567-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5965c1feb05ec609029567-8">8</div><div class="crayon-num" data-line="crayon-5965c1feb05ec609029567-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5965c1feb05ec609029567-10">10</div><div class="crayon-num" data-line="crayon-5965c1feb05ec609029567-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5965c1feb05ec609029567-12">12</div><div class="crayon-num" data-line="crayon-5965c1feb05ec609029567-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5965c1feb05ec609029567-14">14</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5965c1feb05ec609029567-1"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-k ">cd</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">home</span><span class="crayon-o">/</span><span class="crayon-v">pi</span><span class="crayon-o">/</span><span class="crayon-v">MustafaExam</span><span class="crayon-o">/</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-e">ilgili </span><span class="crayon-i">klas</span>ö<span class="crayon-i">r</span>ü<span class="crayon-h"> </span><span class="crayon-i">a</span>ç<span class="crayon-e">ma</span></div><div class="crayon-line crayon-striped-line" id="crayon-5965c1feb05ec609029567-2"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-o">/</span><span class="crayon-i">MustafaExam</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-e">nano </span><span class="crayon-v">main</span><span class="crayon-sy">.</span><span class="crayon-v">c</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-e">ilgili </span><span class="crayon-i">klas</span>ö<span class="crayon-i">r</span><span class="crayon-h"> </span><span class="crayon-i">i</span>ç<span class="crayon-e">indeki </span><span class="crayon-i">dosyay</span>ı<span class="crayon-h"> </span><span class="crayon-i">a</span>ç<span class="crayon-v">ma</span></div><div class="crayon-line" id="crayon-5965c1feb05ec609029567-3"><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span></div><div class="crayon-line crayon-striped-line" id="crayon-5965c1feb05ec609029567-4"><span class="crayon-e">sudo </span><span class="crayon-e">gcc </span><span class="crayon-v">main</span><span class="crayon-sy">.</span><span class="crayon-v">c</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">o</span><span class="crayon-h"> </span><span class="crayon-v">myfirstcprogram</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">main</span><span class="crayon-sy">.</span><span class="crayon-i">c</span><span class="crayon-h"> </span><span class="crayon-i">dosyas</span>ı<span class="crayon-i">n</span>ı<span class="crayon-h"> </span><span class="crayon-e">gcc </span><span class="crayon-e">ile </span><span class="crayon-v">derleme</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5965c1feb05ec609029567-5"><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span></div><div class="crayon-line crayon-striped-line" id="crayon-5965c1feb05ec609029567-6"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">cd</span><span class="crayon-h"> </span><span class="crayon-e">wiringPi </span></div><div class="crayon-line" id="crayon-5965c1feb05ec609029567-7"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-o">/</span><span class="crayon-i">wiringPi</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">ls</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">ilgili </span><span class="crayon-i">klas</span>ö<span class="crayon-i">r</span><span class="crayon-h"> </span><span class="crayon-i">i</span>ç<span class="crayon-e">indeki </span><span class="crayon-i">dosyalar</span>ı<span class="crayon-h"> </span><span class="crayon-v">listeler</span><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5965c1feb05ec609029567-8"><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5965c1feb05ec609029567-9"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-v">apt</span><span class="crayon-o">-</span><span class="crayon-e">get </span><span class="crayon-v">update</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-i">uygulamalar</span>ı<span class="crayon-i">n</span><span class="crayon-h"> </span><span class="crayon-e">yeni </span><span class="crayon-i">dosyalar</span>ı<span class="crayon-h"> </span><span class="crayon-i">g</span>ü<span class="crayon-e">nceller </span></div><div class="crayon-line crayon-striped-line" id="crayon-5965c1feb05ec609029567-10"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-v">apt</span><span class="crayon-o">-</span><span class="crayon-e">get </span><span class="crayon-v">upgrade</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-i">uygulamalar</span>ı<span class="crayon-i">n</span><span class="crayon-h"> </span><span class="crayon-e">indirilien </span><span class="crayon-i">dosyalar</span><span class="crayon-h"> </span><span class="crayon-i">g</span>ü<span class="crayon-v">ncellenir</span></div><div class="crayon-line" id="crayon-5965c1feb05ec609029567-11"><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span></div><div class="crayon-line crayon-striped-line" id="crayon-5965c1feb05ec609029567-12"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">git </span><span class="crayon-e">clone </span><span class="crayon-v">git</span><span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-o">/</span><span class="crayon-v">git</span><span class="crayon-sy">.</span><span class="crayon-v">drogon</span><span class="crayon-sy">.</span><span class="crayon-v">net</span><span class="crayon-o">/</span><span class="crayon-v">wiringPi</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-i">link</span>'<span class="crayon-e">teki </span><span class="crayon-i">dosyalar</span>ı<span class="crayon-h"> </span><span class="crayon-e">kopyalar </span></div><div class="crayon-line" id="crayon-5965c1feb05ec609029567-13"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-e">wget </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-o">/</span><span class="crayon-k ">dl</span><span class="crayon-sy">.</span><span class="crayon-v">dropboxusercontent</span><span class="crayon-sy">.</span><span class="crayon-v">com</span><span class="crayon-o">/</span><span class="crayon-v">u</span><span class="crayon-o">/</span><span class="crayon-cn">80256631</span><span class="crayon-o">/</span><span class="crayon-v">mt7601</span><span class="crayon-o">-</span><span class="crayon-cn">3.18.11</span><span class="crayon-o">-</span><span class="crayon-v">v7</span><span class="crayon-o">-</span><span class="crayon-cn">776.tar.gz</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">ilgili </span><span class="crayon-e">adresteki </span><span class="crayon-i">dosyay</span>ı<span class="crayon-h"> </span><span class="crayon-i">y</span>ü<span class="crayon-e">kler </span></div><div class="crayon-line crayon-striped-line" id="crayon-5965c1feb05ec609029567-14"><span class="crayon-v">pi</span><span class="crayon-sy">@</span><span class="crayon-v">raspberrypi</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-v">apt</span><span class="crayon-o">-</span><span class="crayon-e">get </span><span class="crayon-e">install </span><span class="crayon-v">wget</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-e">wget </span><span class="crayon-e">komutunu </span><span class="crayon-i">kull</span>ı<span class="crayon-i">mas</span>ı<span class="crayon-h"> </span><span class="crayon-i">i</span>ç<span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-i">uygulamalay</span>ı<span class="crayon-h"> </span><span class="crayon-i">y</span>ü<span class="crayon-i">kl</span>ü<span class="crayon-v">yoruz</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0218 seconds] -->
+<p>&nbsp;</p>
+<p><em>Kaynak:</em></p>
+<p><em> https://www.raspberrypi.org/documentation/linux/usage/commands.md</em></p>
+<p><em>https://tr.wikibooks.org/wiki/Linux_%C4%B0%C5%9Fletim_Sistemi/Linux_Komutlar%C4%B1/Dosya_ve_klas%C3%B6r_komutlar%C4%B1#pwd</em></p>
+<p>&nbsp;</p>
+<p></p><div class="synved-social-container synved-social-container-share"><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="https://twitter.com/MustafTekdemir" href="https://twitter.com/MustafTekdemir" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="https://twitter.com/MustafTekdemir" class="synved-share-image synved-social-image synved-social-image-share" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/twitter.png"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="https://twitter.com/MustafTekdemir" href="https://twitter.com/MustafTekdemir" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="https://twitter.com/MustafTekdemir" class="synved-share-image synved-social-image synved-social-image-share" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/twitter(1).png"></a></div><br><div class="synved-social-container synved-social-container-follow"><a class="synved-social-button synved-social-button-follow synved-social-size-32 synved-social-resolution-normal synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Follow me on twitter" href="https://twitter.com/MustafTekdemir" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="Follow me on twitter" class="synved-share-image synved-social-image synved-social-image-follow" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/twitter.png"></a><a class="synved-social-button synved-social-button-follow synved-social-size-32 synved-social-resolution-normal synved-social-provider-linkedin nolightbox" data-provider="linkedin" target="_blank" rel="nofollow" title="Find us on Linkedin" href="https://tr.linkedin.com/pub/mustafa-tekdemir/32/556/174" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="linkedin" title="Find us on Linkedin" class="synved-share-image synved-social-image synved-social-image-follow" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/linkedin.png"></a><a class="synved-social-button synved-social-button-follow synved-social-size-32 synved-social-resolution-normal synved-social-provider-youtube nolightbox" data-provider="youtube" target="_blank" rel="nofollow" title="Find us on YouTube" href="https://www.youtube.com/channel/UCKX1sjzNAe52eLJsqMMiA-A" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="youtube" title="Find us on YouTube" class="synved-share-image synved-social-image synved-social-image-follow" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/youtube.png"></a><a class="synved-social-button synved-social-button-follow synved-social-size-32 synved-social-resolution-normal synved-social-provider-instagram nolightbox" data-provider="instagram" target="_blank" rel="nofollow" title="Check out our instagram feed" href="https://instagram.com/mustafatekdemir_" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="instagram" title="Check out our instagram feed" class="synved-share-image synved-social-image synved-social-image-follow" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/instagram.png"></a><a class="synved-social-button synved-social-button-follow synved-social-size-32 synved-social-resolution-hidef synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Follow me on twitter" href="https://twitter.com/MustafTekdemir" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="Follow me on twitter" class="synved-share-image synved-social-image synved-social-image-follow" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/twitter(1).png"></a><a class="synved-social-button synved-social-button-follow synved-social-size-32 synved-social-resolution-hidef synved-social-provider-linkedin nolightbox" data-provider="linkedin" target="_blank" rel="nofollow" title="Find us on Linkedin" href="https://tr.linkedin.com/pub/mustafa-tekdemir/32/556/174" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="linkedin" title="Find us on Linkedin" class="synved-share-image synved-social-image synved-social-image-follow" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/linkedin(1).png"></a><a class="synved-social-button synved-social-button-follow synved-social-size-32 synved-social-resolution-hidef synved-social-provider-youtube nolightbox" data-provider="youtube" target="_blank" rel="nofollow" title="Find us on YouTube" href="https://www.youtube.com/channel/UCKX1sjzNAe52eLJsqMMiA-A" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="youtube" title="Find us on YouTube" class="synved-share-image synved-social-image synved-social-image-follow" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/youtube(1).png"></a><a class="synved-social-button synved-social-button-follow synved-social-size-32 synved-social-resolution-hidef synved-social-provider-instagram nolightbox" data-provider="instagram" target="_blank" rel="nofollow" title="Check out our instagram feed" href="https://instagram.com/mustafatekdemir_" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="instagram" title="Check out our instagram feed" class="synved-share-image synved-social-image synved-social-image-follow" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/instagram(1).png"></a></div> 					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			<a href="http://mustafatekdemir.com/category/raspberry-pi-esp/" rel="category tag">Raspberry Pi - ESP</a> içinde <a href="http://mustafatekdemir.com/tag/basic/" rel="tag">basic</a>, <a href="http://mustafatekdemir.com/tag/command/" rel="tag">command</a>, <a href="http://mustafatekdemir.com/tag/klasor/" rel="tag">klasör</a>, <a href="http://mustafatekdemir.com/tag/komut/" rel="tag">komut</a>, <a href="http://mustafatekdemir.com/tag/linux/" rel="tag">linux</a>, <a href="http://mustafatekdemir.com/tag/ls/" rel="tag">ls</a>, <a href="http://mustafatekdemir.com/tag/pi/" rel="tag">pi</a>, <a href="http://mustafatekdemir.com/tag/raspberry/" rel="tag">raspberry</a>, <a href="http://mustafatekdemir.com/tag/temel/" rel="tag">Temel</a> etiketleriyle <a href="http://mustafatekdemir.com/raspberry-pi-esp/781/" title="11:45 am" rel="bookmark"><time class="entry-date" datetime="2016-11-07T11:45:27+00:00">07/11/2016</time></a> tarihinde <span class="by-author"><span class="author vcard"><a class="url fn n" href="http://mustafatekdemir.com/author/admin/" title="Mustafa Tekdemir tarafından yazılmış tüm yazıları görüntüle" rel="author">Mustafa Tekdemir</a></span></span> tarafınadan gönderildi.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+				<nav class="nav-single">
+					<h3 class="assistive-text">Yazı dolaşımı</h3>
+					<span class="nav-previous"><a href="http://mustafatekdemir.com/stm32-2/stm32f0-tum-birimler-icin-ornekler2-bolum/" rel="prev"><span class="meta-nav">←</span> STM32F0 Tüm Birimler İçin Örnekler(2.Bölüm)</a></span>
+					<span class="nav-next"><a href="http://mustafatekdemir.com/stm32-2/stm32-rtc-iar-derleme-saati/" rel="next">STM32 Yazılım Derleme Saati RTC Örneği <span class="meta-nav">→</span></a></span>
+				</nav><!-- .nav-single -->
+
+				
+<div id="comments" class="comments-area">
+
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Bir Cevap Yazın <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://mustafatekdemir.com/raspberry-pi-esp/781/#respond" style="display:none;">Cevabı iptal et</a></small></h3>			<form action="http://mustafatekdemir.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">E-posta hesabınız yayımlanmayacak.</span> Gerekli alanlar <span class="required">*</span> ile işaretlenmişlerdir</p><p class="comment-form-comment"><label for="comment">Yorum</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">İsim <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required"></p>
+<p class="comment-form-email"><label for="email">E-posta <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required"></p>
+<p class="comment-form-url"><label for="url">İnternet sitesi</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Yorum gönder"> <input type="hidden" name="comment_post_ID" value="781" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments .comments-area -->
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://mustafatekdemir.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Arama:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Ara">
+				</div>
+			</form></aside><aside id="soundcloud_master_widget_buttons-2" class="widget SoundCloud Master Buttons"><h3 class="widget-title">Bestelerimi Dinlemek İçin</h3><a href="https://soundcloud.com/mustafatekdemir" target="_blank"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/btn-connect-s.png"></a>&nbsp;</aside><aside id="synved_social_share-3" class="widget widget_synved_social_share"><h3 class="widget-title">Takip Et</h3><div><div class="synved-social-container synved-social-container-share"><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="https://twitter.com/MustafTekdemir" href="https://twitter.com/MustafTekdemir" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="https://twitter.com/MustafTekdemir" class="synved-share-image synved-social-image synved-social-image-share" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/twitter.png"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="https://twitter.com/MustafTekdemir" href="https://twitter.com/MustafTekdemir" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="https://twitter.com/MustafTekdemir" class="synved-share-image synved-social-image synved-social-image-share" width="32" height="32" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/twitter(1).png"></a></div></div></aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Kategoriler</h3>		<ul>
+	<li class="cat-item cat-item-6"><a href="http://mustafatekdemir.com/category/donanim/" title="Devrenin donanımsal tasarımı, kullanılan malzemeler hakkında bilgiler vereceğim.">Donanım</a> (2)
+</li>
+	<li class="cat-item cat-item-7"><a href="http://mustafatekdemir.com/category/gitar/" title="Elektro gitarist olarak bilgilerimi aktarmaya çalışacağım ">Gitar ve Daha Fazlası</a> (7)
+</li>
+	<li class="cat-item cat-item-150"><a href="http://mustafatekdemir.com/category/kisiselgelisim/" title="Kişisel gelişim üzerine kendime yönelik yaptığım araştırmaların özetini paylaşacağım">Kişisel Gelişim</a> (4)
+</li>
+	<li class="cat-item cat-item-8"><a href="http://mustafatekdemir.com/category/mikroislemci/" title="Mikroişlemci uygulamaları ve özelliklerinden bahsedeceğim">Mikrodenetleyici Hakkında</a> (4)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://mustafatekdemir.com/category/pcb-tasarimi/" title="PCB tasarimi ve pif noktalari ile ilgili bilgileri vereceğim.">PCB Tasarımı</a> (4)
+</li>
+	<li class="cat-item cat-item-241"><a href="http://mustafatekdemir.com/category/raspberry-pi-esp/">Raspberry Pi – ESP</a> (1)
+</li>
+	<li class="cat-item cat-item-124"><a href="http://mustafatekdemir.com/category/stm32-2/" title="STM32 serisi işlemciler hakkında paylaşımlarda bulunacağım">STM32-STM8 Örnekleri</a> (7)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://mustafatekdemir.com/category/yazilim/" title="Arayüz oluşturma ,mikroişlemci programlamayla ilgili bilgiler paylaşılacak.">Yazılım(C/C++/C#/HTML)</a> (6)
+</li>
+		</ul>
+</aside><aside id="wpdt-archives-widget-2" class="widget wpdt-archives"><h3 class="widget-title">Arşiv</h3><div class="dtree"><span class="oclinks oclinks_arc" id="oclinks_arc1" style="display: block;"><a href="javascript:arc1.openAll();" title="Tüm Yazıları Görüntüle">Tüm Yazıları Görüntüle</a><span class="oclinks_sep oclinks_sep_arc" id="oclinks_sep_arc1">  </span><a href="javascript:arc1.closeAll();" title=" | Kapat"> | Kapat</a></span>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+try{
+if(document.getElementById && document.getElementById('oclinks_arc1')){document.getElementById('oclinks_arc1').style.display = 'block';}
+var arc1 = new wpdTree('arc1', 'http://mustafatekdemir.com/','0');
+arc1.config.useLines=1;
+arc1.config.useIcons=0;
+arc1.config.closeSameLevel=1;
+arc1.config.folderLinks=0;
+arc1.config.useSelection=1;
+arc1.a(0,'root','','','','','');
+arc1.a(-1,0,'Kasım 2016&nbsp;(2)','','2016/11/','','');
+arc1.a(-2,0,'Eylül 2016&nbsp;(3)','','2016/09/','','');
+arc1.a(-3,0,'Temmuz 2016&nbsp;(1)','','2016/07/','','');
+arc1.a(-4,0,'Mayıs 2016&nbsp;(3)','','2016/05/','','');
+arc1.a(-5,0,'Şubat 2016&nbsp;(1)','','2016/02/','','');
+arc1.a(-6,0,'Ocak 2016&nbsp;(1)','','2016/01/','','');
+arc1.a(-7,0,'Eylül 2015&nbsp;(1)','','2015/09/','','');
+arc1.a(-8,0,'Ağustos 2015&nbsp;(2)','','2015/08/','','');
+arc1.a(-9,0,'Temmuz 2015&nbsp;(1)','','2015/07/','','');
+arc1.a(-10,0,'Ekim 2014&nbsp;(1)','','2014/10/','','');
+arc1.a(-11,0,'Eylül 2014&nbsp;(2)','','2014/09/','','');
+arc1.a(-12,0,'Ağustos 2014&nbsp;(1)','','2014/08/','','');
+arc1.a(-13,0,'Temmuz 2014&nbsp;(5)','','2014/07/','','');
+arc1.a(-14,0,'Haziran 2014&nbsp;(4)','','2014/06/','','');
+arc1.a(-15,0,'Mart 2014&nbsp;(2)','','2014/03/','','');
+arc1.a(-16,0,'Şubat 2014&nbsp;(2)','','2014/02/','','');
+arc1.a(-17,0,'Aralık 2013&nbsp;(2)','','2013/12/','','');
+arc1.a(-18,0,'Kasım 2013&nbsp;(1)','','2013/11/','','');
+arc1.a(781,-1,'Raspberry Pi Linux Komutları','','raspberry-pi-esp/781/','','');
+arc1.a(766,-2,'STM32F0 Tüm Birimler İçin Örnekler(2.Bölüm)','','stm32-2/stm32f0-tum-birimler-icin-ornekler2-bolum/','','');
+arc1.a(755,-2,'STM32F0 Tüm Birimler İçin Örnekler(1.Bölüm)','','stm32-2/stm32f0-tum-birimler-icin-ornekler/','','');
+arc1.a(751,-1,'STM32 Yazılım Derleme Saati RTC Örneği','','stm32-2/stm32-rtc-iar-derleme-saati/','','');
+arc1.a(736,-2,'STM32 GPIO Anlamları (Open drain-Push Pull,Pull Up-Pull Down,GPIO Speed)','','mikroislemci/stm32-gpio-anlamlari-open-drain-push-pullpull-up-pull-downgpio-speed/','','');
+arc1.a(701,-4,'Temel HTML Kodları &#038; Anlamları','','yazilim/temel-html-kodlari-anlamlari/','','');
+arc1.a(685,-4,'Kapasitif Dokunmatik Buton Projesi','','stm32-2/kapasitif-dokunmatik-buton-projesi/','','');
+arc1.a(654,-4,'STM8Lxx UART Kesmesi &#038; İşlemci Uyku Modu','','stm32-2/stm8l_uart_haltmode_interrupt/','','');
+arc1.a(648,-3,'Tecrübeli Bileşkeler','','kisiselgelisim/tecrubeli-bileskeler/','','');
+arc1.a(607,-5,'No exports were found that match Hatası','','yazilim/no-exports-were-found-that-match-hatasi/','','');
+arc1.a(573,-6,'C/C++ KOD YAZMA KURALLARI','','yazilim/cc-kod-yazma-kurallari/','','');
+arc1.a(552,-7,'STM8 UNIQUE ID OKUMA','','stm32-2/stm8-unique-id-okuma/','','');
+arc1.a(528,-8,'Tortoıse SVN Kurulum Özet','','kisiselgelisim/tortoise-svn-kurulum-ozet/','','');
+arc1.a(507,-8,'Vazgeçebilmek…  İş Hayatı','','kisiselgelisim/vazgecebilmeliymisiz/','','');
+arc1.a(494,-9,'Dikkat Dağınıklığı Nasıl Giderilir? İş Hayatı','','kisiselgelisim/dikkat-daginikligi-nasil-giderilir-is-hayati/','','');
+arc1.a(466,-10,'ST Visual Programmer Kullanımı','','mikroislemci/st-visual-programmer-kullanimi/','','');
+arc1.a(438,-11,'CooCox : Connect failed HATASI','','yazilim/coocox-error-connect-failed-hatasi/','','');
+arc1.a(430,-11,'Kondansatör Çeşitleri, Farkları','','donanim/kondansator-cesitleri-farklari/','','');
+arc1.a(398,-12,'EAGLE GERBER OLUŞTURMA VE TEMEL ÖZELLİKLER','','pcb-tasarimi/eagle-gerber-olusturma-ve-temel-ozellikler/','','');
+arc1.a(380,-13,'STM32 Flash Okuma Yazma Silme İşlemleri','','stm32-2/a/','','');
+arc1.a(363,-13,'Eagle PCB&#8217;den Kütüphane Oluşturma','','pcb-tasarimi/eagle-pcbden-kutuphane-olusturma/','','');
+arc1.a(348,-13,'Eagle Cad Şemada BUS çizimi','','pcb-tasarimi/eagle-cad-semada-bus-cizimi/','','');
+arc1.a(321,-13,'main(  ) fonksiyonuna dışarıdan nasıl parametre girilir?','','yazilim/main-fonksiyonuna-disaridan-nasil-parametre-girilir/','','');
+arc1.a(302,-13,'Komponentlerin İsim Kısaltmaları /Component Name Abbreviations','','donanim/komponentlerin-isim-kisaltmalari-component-name-abbreviations/','','');
+arc1.a(283,-14,'C dili Belirleyiciler ve Niteleyiciler','','yazilim/c-dili-belirleyiciler-ve-niteleyiciler/','','');
+arc1.a(238,-14,'Yığın (Stack ve Heap) Kullanımı','','mikroislemci/yigin-stack-ve-heap-kullanimi/','','');
+arc1.a(82,-18,'Ev Stüdyo Masası &#8211; Home Studio Table','','gitar/ev-studyo-masasi-home-studio-table/','','');
+arc1.a(81,-17,'Sansamp GT2 Tutorial Guitar Pedal','','gitar/sansamp-gt2-tutorial-guitar-pedal/','','');
+arc1.a(80,-17,'Floyd Rose Tel Değişimi &#8211; Floyd Rose String Change','','gitar/floyd-rose-tel-degisimi-floyd-rose-string-change/','','');
+arc1.a(78,-16,'AB Selector Guitar Pedal','','gitar/ab-selector-guitar-pedal/','','');
+arc1.a(76,-16,'Fender Stratocaster Relic (Eskitme) İşlemi','','gitar/fender-stratocaster-relic-eskitme-islemi/','','');
+arc1.a(75,-15,'Ekolayzır Pedalı (4 BAND EQ PEDAL eq7545)','','gitar/ekolayzir-pedali-4-band-eq-pedal-eq7545/','','');
+arc1.a(74,-15,'Klasik Gitardan Kitaplık Raf yapımı (Classic Guitar Bookcase)','','gitar/klasik-gitardan-kitaplik-raf-yapimi-classic-guitar-bookcase/','','');
+arc1.a(61,-14,'PCB Tasarımında Püf Noktalar/EMC Uyumluluk','','pcb-tasarimi/pcb-tasariminda-puf-noktalar/','','');
+arc1.a(42,-14,'Stm32f407 GPIO Ayarları/ GPIO Optıons','','mikroislemci/stm32f407-gpio-ayarlari/','','');
+document.write(arc1);
+}catch(e){} /* ]]> */
+</script><div class="dtree_arc" id="dtree_arc1">
+<div class="dtNode"> </div><div id="darc10" class="clip" style="display:block;"><div class="dtNode"><a href="javascript: arc1.o(1);"><img id="jarc11" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/minus.gif" alt=""></a><a href="javascript: arc1.o(1);" title="Kasım 2016 (2)" class="node">Kasım 2016&nbsp;(2)</a> </div><div id="darc11" class="clip"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc119" class="nodeSel" href="http://mustafatekdemir.com/raspberry-pi-esp/781/" title="Raspberry Pi Linux Komutları" onclick="javascript: arc1.s(19);">Raspberry Pi Linux Komutları</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc122" class="node" href="http://mustafatekdemir.com/stm32-2/stm32-rtc-iar-derleme-saati/" title="STM32 Yazılım Derleme Saati RTC Örneği" onclick="javascript: arc1.s(22);">STM32 Yazılım Derleme Saati RTC Örneği</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(2);"><img id="jarc12" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(2);" title="Eylül 2016 (3)" class="node">Eylül 2016&nbsp;(3)</a> </div><div id="darc12" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc120" class="node" href="http://mustafatekdemir.com/stm32-2/stm32f0-tum-birimler-icin-ornekler2-bolum/" title="STM32F0 Tüm Birimler İçin Örnekler(2.Bölüm)" onclick="javascript: arc1.s(20);">STM32F0 Tüm Birimler İçin Örnekler(2.Bölüm)</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc121" class="node" href="http://mustafatekdemir.com/stm32-2/stm32f0-tum-birimler-icin-ornekler/" title="STM32F0 Tüm Birimler İçin Örnekler(1.Bölüm)" onclick="javascript: arc1.s(21);">STM32F0 Tüm Birimler İçin Örnekler(1.Bölüm)</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc123" class="node" href="http://mustafatekdemir.com/mikroislemci/stm32-gpio-anlamlari-open-drain-push-pullpull-up-pull-downgpio-speed/" title="STM32 GPIO Anlamları (Open drain-Push Pull,Pull Up-Pull Down,GPIO Speed)" onclick="javascript: arc1.s(23);">STM32 GPIO Anlamları (Open drain-Push Pull,Pull Up-Pull Down,GPIO Speed)</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(3);"><img id="jarc13" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(3);" title="Temmuz 2016 (1)" class="node">Temmuz 2016&nbsp;(1)</a> </div><div id="darc13" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc127" class="node" href="http://mustafatekdemir.com/kisiselgelisim/tecrubeli-bileskeler/" title="Tecrübeli Bileşkeler" onclick="javascript: arc1.s(27);">Tecrübeli Bileşkeler</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(4);"><img id="jarc14" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(4);" title="Mayıs 2016 (3)" class="node">Mayıs 2016&nbsp;(3)</a> </div><div id="darc14" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc124" class="node" href="http://mustafatekdemir.com/yazilim/temel-html-kodlari-anlamlari/" title="Temel HTML Kodları &amp; Anlamları" onclick="javascript: arc1.s(24);">Temel HTML Kodları &amp; Anlamları</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc125" class="node" href="http://mustafatekdemir.com/stm32-2/kapasitif-dokunmatik-buton-projesi/" title="Kapasitif Dokunmatik Buton Projesi" onclick="javascript: arc1.s(25);">Kapasitif Dokunmatik Buton Projesi</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc126" class="node" href="http://mustafatekdemir.com/stm32-2/stm8l_uart_haltmode_interrupt/" title="STM8Lxx UART Kesmesi &amp; İşlemci Uyku Modu" onclick="javascript: arc1.s(26);">STM8Lxx UART Kesmesi &amp; İşlemci Uyku Modu</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(5);"><img id="jarc15" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(5);" title="Şubat 2016 (1)" class="node">Şubat 2016&nbsp;(1)</a> </div><div id="darc15" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc128" class="node" href="http://mustafatekdemir.com/yazilim/no-exports-were-found-that-match-hatasi/" title="No exports were found that match Hatası" onclick="javascript: arc1.s(28);">No exports were found that match Hatası</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(6);"><img id="jarc16" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(6);" title="Ocak 2016 (1)" class="node">Ocak 2016&nbsp;(1)</a> </div><div id="darc16" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc129" class="node" href="http://mustafatekdemir.com/yazilim/cc-kod-yazma-kurallari/" title="C/C++ KOD YAZMA KURALLARI" onclick="javascript: arc1.s(29);">C/C++ KOD YAZMA KURALLARI</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(7);"><img id="jarc17" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(7);" title="Eylül 2015 (1)" class="node">Eylül 2015&nbsp;(1)</a> </div><div id="darc17" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc130" class="node" href="http://mustafatekdemir.com/stm32-2/stm8-unique-id-okuma/" title="STM8 UNIQUE ID OKUMA" onclick="javascript: arc1.s(30);">STM8 UNIQUE ID OKUMA</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(8);"><img id="jarc18" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(8);" title="Ağustos 2015 (2)" class="node">Ağustos 2015&nbsp;(2)</a> </div><div id="darc18" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc131" class="node" href="http://mustafatekdemir.com/kisiselgelisim/tortoise-svn-kurulum-ozet/" title="Tortoıse SVN Kurulum Özet" onclick="javascript: arc1.s(31);">Tortoıse SVN Kurulum Özet</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc132" class="node" href="http://mustafatekdemir.com/kisiselgelisim/vazgecebilmeliymisiz/" title="Vazgeçebilmek…  İş Hayatı" onclick="javascript: arc1.s(32);">Vazgeçebilmek…  İş Hayatı</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(9);"><img id="jarc19" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(9);" title="Temmuz 2015 (1)" class="node">Temmuz 2015&nbsp;(1)</a> </div><div id="darc19" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc133" class="node" href="http://mustafatekdemir.com/kisiselgelisim/dikkat-daginikligi-nasil-giderilir-is-hayati/" title="Dikkat Dağınıklığı Nasıl Giderilir? İş Hayatı" onclick="javascript: arc1.s(33);">Dikkat Dağınıklığı Nasıl Giderilir? İş Hayatı</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(10);"><img id="jarc110" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(10);" title="Ekim 2014 (1)" class="node">Ekim 2014&nbsp;(1)</a> </div><div id="darc110" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc134" class="node" href="http://mustafatekdemir.com/mikroislemci/st-visual-programmer-kullanimi/" title="ST Visual Programmer Kullanımı" onclick="javascript: arc1.s(34);">ST Visual Programmer Kullanımı</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(11);"><img id="jarc111" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(11);" title="Eylül 2014 (2)" class="node">Eylül 2014&nbsp;(2)</a> </div><div id="darc111" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc135" class="node" href="http://mustafatekdemir.com/yazilim/coocox-error-connect-failed-hatasi/" title="CooCox : Connect failed HATASI" onclick="javascript: arc1.s(35);">CooCox : Connect failed HATASI</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc136" class="node" href="http://mustafatekdemir.com/donanim/kondansator-cesitleri-farklari/" title="Kondansatör Çeşitleri, Farkları" onclick="javascript: arc1.s(36);">Kondansatör Çeşitleri, Farkları</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(12);"><img id="jarc112" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(12);" title="Ağustos 2014 (1)" class="node">Ağustos 2014&nbsp;(1)</a> </div><div id="darc112" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc137" class="node" href="http://mustafatekdemir.com/pcb-tasarimi/eagle-gerber-olusturma-ve-temel-ozellikler/" title="EAGLE GERBER OLUŞTURMA VE TEMEL ÖZELLİKLER" onclick="javascript: arc1.s(37);">EAGLE GERBER OLUŞTURMA VE TEMEL ÖZELLİKLER</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(13);"><img id="jarc113" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(13);" title="Temmuz 2014 (5)" class="node">Temmuz 2014&nbsp;(5)</a> </div><div id="darc113" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc138" class="node" href="http://mustafatekdemir.com/stm32-2/a/" title="STM32 Flash Okuma Yazma Silme İşlemleri" onclick="javascript: arc1.s(38);">STM32 Flash Okuma Yazma Silme İşlemleri</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc139" class="node" href="http://mustafatekdemir.com/pcb-tasarimi/eagle-pcbden-kutuphane-olusturma/" title="Eagle PCB’den Kütüphane Oluşturma" onclick="javascript: arc1.s(39);">Eagle PCB’den Kütüphane Oluşturma</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc140" class="node" href="http://mustafatekdemir.com/pcb-tasarimi/eagle-cad-semada-bus-cizimi/" title="Eagle Cad Şemada BUS çizimi" onclick="javascript: arc1.s(40);">Eagle Cad Şemada BUS çizimi</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc141" class="node" href="http://mustafatekdemir.com/yazilim/main-fonksiyonuna-disaridan-nasil-parametre-girilir/" title="main(  ) fonksiyonuna dışarıdan nasıl parametre girilir?" onclick="javascript: arc1.s(41);">main(  ) fonksiyonuna dışarıdan nasıl parametre girilir?</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc142" class="node" href="http://mustafatekdemir.com/donanim/komponentlerin-isim-kisaltmalari-component-name-abbreviations/" title="Komponentlerin İsim Kısaltmaları /Component Name Abbreviations" onclick="javascript: arc1.s(42);">Komponentlerin İsim Kısaltmaları /Component Name Abbreviations</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(14);"><img id="jarc114" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(14);" title="Haziran 2014 (4)" class="node">Haziran 2014&nbsp;(4)</a> </div><div id="darc114" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc143" class="node" href="http://mustafatekdemir.com/yazilim/c-dili-belirleyiciler-ve-niteleyiciler/" title="C dili Belirleyiciler ve Niteleyiciler" onclick="javascript: arc1.s(43);">C dili Belirleyiciler ve Niteleyiciler</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc144" class="node" href="http://mustafatekdemir.com/mikroislemci/yigin-stack-ve-heap-kullanimi/" title="Yığın (Stack ve Heap) Kullanımı" onclick="javascript: arc1.s(44);">Yığın (Stack ve Heap) Kullanımı</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc152" class="node" href="http://mustafatekdemir.com/pcb-tasarimi/pcb-tasariminda-puf-noktalar/" title="PCB Tasarımında Püf Noktalar/EMC Uyumluluk" onclick="javascript: arc1.s(52);">PCB Tasarımında Püf Noktalar/EMC Uyumluluk</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc153" class="node" href="http://mustafatekdemir.com/mikroislemci/stm32f407-gpio-ayarlari/" title="Stm32f407 GPIO Ayarları/ GPIO Optıons" onclick="javascript: arc1.s(53);">Stm32f407 GPIO Ayarları/ GPIO Optıons</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(15);"><img id="jarc115" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(15);" title="Mart 2014 (2)" class="node">Mart 2014&nbsp;(2)</a> </div><div id="darc115" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc150" class="node" href="http://mustafatekdemir.com/gitar/ekolayzir-pedali-4-band-eq-pedal-eq7545/" title="Ekolayzır Pedalı (4 BAND EQ PEDAL eq7545)" onclick="javascript: arc1.s(50);">Ekolayzır Pedalı (4 BAND EQ PEDAL eq7545)</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc151" class="node" href="http://mustafatekdemir.com/gitar/klasik-gitardan-kitaplik-raf-yapimi-classic-guitar-bookcase/" title="Klasik Gitardan Kitaplık Raf yapımı (Classic Guitar Bookcase)" onclick="javascript: arc1.s(51);">Klasik Gitardan Kitaplık Raf yapımı (Classic Guitar Bookcase)</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(16);"><img id="jarc116" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(16);" title="Şubat 2014 (2)" class="node">Şubat 2014&nbsp;(2)</a> </div><div id="darc116" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc148" class="node" href="http://mustafatekdemir.com/gitar/ab-selector-guitar-pedal/" title="AB Selector Guitar Pedal" onclick="javascript: arc1.s(48);">AB Selector Guitar Pedal</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc149" class="node" href="http://mustafatekdemir.com/gitar/fender-stratocaster-relic-eskitme-islemi/" title="Fender Stratocaster Relic (Eskitme) İşlemi" onclick="javascript: arc1.s(49);">Fender Stratocaster Relic (Eskitme) İşlemi</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(17);"><img id="jarc117" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plus.gif" alt=""></a><a href="javascript: arc1.o(17);" title="Aralık 2013 (2)" class="node">Aralık 2013&nbsp;(2)</a> </div><div id="darc117" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/join.gif" alt=""><a id="sarc146" class="node" href="http://mustafatekdemir.com/gitar/sansamp-gt2-tutorial-guitar-pedal/" title="Sansamp GT2 Tutorial Guitar Pedal" onclick="javascript: arc1.s(46);">Sansamp GT2 Tutorial Guitar Pedal</a> </div><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/line.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc147" class="node" href="http://mustafatekdemir.com/gitar/floyd-rose-tel-degisimi-floyd-rose-string-change/" title="Floyd Rose Tel Değişimi – Floyd Rose String Change" onclick="javascript: arc1.s(47);">Floyd Rose Tel Değişimi – Floyd Rose String Change</a> </div></div><div class="dtNode"><a href="javascript: arc1.o(18);"><img id="jarc118" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/plusbottom.gif" alt=""></a><a href="javascript: arc1.o(18);" title="Kasım 2013 (1)" class="node">Kasım 2013&nbsp;(1)</a> </div><div id="darc118" class="clip" style="display:none;"><div class="dtNode"><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/empty.gif" alt=""><img src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/joinbottom.gif" alt=""><a id="sarc145" class="node" href="http://mustafatekdemir.com/gitar/ev-studyo-masasi-home-studio-table/" title="Ev Stüdyo Masası – Home Studio Table" onclick="javascript: arc1.s(45);">Ev Stüdyo Masası – Home Studio Table</a> </div></div></div></div>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+try{
+arc1.openTo('781', true); /*wp_query object id*/
+}catch(e){} /* ]]> */
+</script>
+</div></aside>	        <aside id="wp-cumulus" class="widget wp_cumulus_widget">						<!-- SWFObject embed by Geoff Stearns geoff@deconcept.com http://blog.deconcept.com/swfobject/ --><script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/swfobject.js.indir"></script><div id="wpcumuluswidgetcontent7765236"><p><a href="http://mustafatekdemir.com/tag/arm/" class="tag-link-15 tag-link-position-1" title="4 konu" style="font-size: 17.333333333333pt;">Arm</a>
+<a href="http://mustafatekdemir.com/tag/board/" class="tag-link-116 tag-link-position-2" title="2 konu" style="font-size: 12.2pt;">board</a>
+<a href="http://mustafatekdemir.com/tag/bookcase/" class="tag-link-25 tag-link-position-3" title="1 konu" style="font-size: 8pt;">bookcase</a>
+<a href="http://mustafatekdemir.com/tag/c/" class="tag-link-94 tag-link-position-4" title="4 konu" style="font-size: 17.333333333333pt;">C</a>
+<a href="http://mustafatekdemir.com/tag/classic/" class="tag-link-22 tag-link-position-5" title="1 konu" style="font-size: 8pt;">classic</a>
+<a href="http://mustafatekdemir.com/tag/design/" class="tag-link-12 tag-link-position-6" title="1 konu" style="font-size: 8pt;">design</a>
+<a href="http://mustafatekdemir.com/tag/eagle/" class="tag-link-111 tag-link-position-7" title="3 konu" style="font-size: 15pt;">Eagle</a>
+<a href="http://mustafatekdemir.com/tag/electronic/" class="tag-link-100 tag-link-position-8" title="2 konu" style="font-size: 12.2pt;">electronic</a>
+<a href="http://mustafatekdemir.com/tag/elektronik/" class="tag-link-99 tag-link-position-9" title="2 konu" style="font-size: 12.2pt;">elektronik</a>
+<a href="http://mustafatekdemir.com/tag/example/" class="tag-link-194 tag-link-position-10" title="4 konu" style="font-size: 17.333333333333pt;">example</a>
+<a href="http://mustafatekdemir.com/tag/fark/" class="tag-link-137 tag-link-position-11" title="2 konu" style="font-size: 12.2pt;">fark</a>
+<a href="http://mustafatekdemir.com/tag/fender/" class="tag-link-26 tag-link-position-12" title="2 konu" style="font-size: 12.2pt;">fender</a>
+<a href="http://mustafatekdemir.com/tag/flash/" class="tag-link-81 tag-link-position-13" title="3 konu" style="font-size: 15pt;">flash</a>
+<a href="http://mustafatekdemir.com/tag/gitar-2/" class="tag-link-28 tag-link-position-14" title="2 konu" style="font-size: 12.2pt;">gitar</a>
+<a href="http://mustafatekdemir.com/tag/gpio/" class="tag-link-19 tag-link-position-15" title="3 konu" style="font-size: 15pt;">GPIO</a>
+<a href="http://mustafatekdemir.com/tag/guitar/" class="tag-link-23 tag-link-position-16" title="3 konu" style="font-size: 15pt;">guitar</a>
+<a href="http://mustafatekdemir.com/tag/handmade/" class="tag-link-42 tag-link-position-17" title="2 konu" style="font-size: 12.2pt;">handmade</a>
+<a href="http://mustafatekdemir.com/tag/hata/" class="tag-link-145 tag-link-position-18" title="2 konu" style="font-size: 12.2pt;">hata</a>
+<a href="http://mustafatekdemir.com/tag/kitaplik/" class="tag-link-24 tag-link-position-19" title="1 konu" style="font-size: 8pt;">kitaplık</a>
+<a href="http://mustafatekdemir.com/tag/kisisel-gelisim/" class="tag-link-151 tag-link-position-20" title="2 konu" style="font-size: 12.2pt;">kişisel gelişim</a>
+<a href="http://mustafatekdemir.com/tag/kod/" class="tag-link-177 tag-link-position-21" title="2 konu" style="font-size: 12.2pt;">KOD</a>
+<a href="http://mustafatekdemir.com/tag/mcu/" class="tag-link-18 tag-link-position-22" title="3 konu" style="font-size: 15pt;">mcu</a>
+<a href="http://mustafatekdemir.com/tag/mikroislemci-2/" class="tag-link-21 tag-link-position-23" title="1 konu" style="font-size: 8pt;">mikroişlemci</a>
+<a href="http://mustafatekdemir.com/tag/open-drain/" class="tag-link-217 tag-link-position-24" title="2 konu" style="font-size: 12.2pt;">Open drain</a>
+<a href="http://mustafatekdemir.com/tag/pcb/" class="tag-link-9 tag-link-position-25" title="5 konu" style="font-size: 19.2pt;">PCB</a>
+<a href="http://mustafatekdemir.com/tag/pedal/" class="tag-link-30 tag-link-position-26" title="3 konu" style="font-size: 15pt;">pedal</a>
+<a href="http://mustafatekdemir.com/tag/pin/" class="tag-link-20 tag-link-position-27" title="1 konu" style="font-size: 8pt;">pin</a>
+<a href="http://mustafatekdemir.com/tag/pull-down/" class="tag-link-220 tag-link-position-28" title="2 konu" style="font-size: 12.2pt;">Pull Down</a>
+<a href="http://mustafatekdemir.com/tag/pull-up/" class="tag-link-219 tag-link-position-29" title="2 konu" style="font-size: 12.2pt;">Pull Up</a>
+<a href="http://mustafatekdemir.com/tag/push-pull/" class="tag-link-218 tag-link-position-30" title="2 konu" style="font-size: 12.2pt;">Push Pull</a>
+<a href="http://mustafatekdemir.com/tag/read/" class="tag-link-82 tag-link-position-31" title="2 konu" style="font-size: 12.2pt;">read</a>
+<a href="http://mustafatekdemir.com/tag/st/" class="tag-link-16 tag-link-position-32" title="1 konu" style="font-size: 8pt;">st</a>
+<a href="http://mustafatekdemir.com/tag/stm8/" class="tag-link-70 tag-link-position-33" title="2 konu" style="font-size: 12.2pt;">stm8</a>
+<a href="http://mustafatekdemir.com/tag/stm32/" class="tag-link-85 tag-link-position-34" title="7 konu" style="font-size: 22pt;">Stm32</a>
+<a href="http://mustafatekdemir.com/tag/stm32f0/" class="tag-link-222 tag-link-position-35" title="2 konu" style="font-size: 12.2pt;">STM32F0</a>
+<a href="http://mustafatekdemir.com/tag/stm32f407/" class="tag-link-17 tag-link-position-36" title="1 konu" style="font-size: 8pt;">stm32f407</a>
+<a href="http://mustafatekdemir.com/tag/stvp/" class="tag-link-140 tag-link-position-37" title="2 konu" style="font-size: 12.2pt;">STVP</a>
+<a href="http://mustafatekdemir.com/tag/tasarim/" class="tag-link-14 tag-link-position-38" title="1 konu" style="font-size: 8pt;">tasarım</a>
+<a href="http://mustafatekdemir.com/tag/tecrube/" class="tag-link-159 tag-link-position-39" title="2 konu" style="font-size: 12.2pt;">tecrübe</a>
+<a href="http://mustafatekdemir.com/tag/tip/" class="tag-link-11 tag-link-position-40" title="1 konu" style="font-size: 8pt;">tip</a>
+<a href="http://mustafatekdemir.com/tag/trick/" class="tag-link-10 tag-link-position-41" title="1 konu" style="font-size: 8pt;">trick</a>
+<a href="http://mustafatekdemir.com/tag/tutorial/" class="tag-link-31 tag-link-position-42" title="2 konu" style="font-size: 12.2pt;">tutorial</a>
+<a href="http://mustafatekdemir.com/tag/usart/" class="tag-link-190 tag-link-position-43" title="2 konu" style="font-size: 12.2pt;">usart</a>
+<a href="http://mustafatekdemir.com/tag/write/" class="tag-link-83 tag-link-position-44" title="2 konu" style="font-size: 12.2pt;">write</a>
+<a href="http://mustafatekdemir.com/tag/ornek/" class="tag-link-197 tag-link-position-45" title="2 konu" style="font-size: 12.2pt;">örnek</a>	<a href="http://mustafatekdemir.com/category/donanim/" title="Devrenin donanımsal tasarımı, kullanılan malzemeler hakkında bilgiler vereceğim.">Donanım</a> (2)<br>
+	<a href="http://mustafatekdemir.com/category/gitar/" title="Elektro gitarist olarak bilgilerimi aktarmaya çalışacağım ">Gitar ve Daha Fazlası</a> (7)<br>
+	<a href="http://mustafatekdemir.com/category/kisiselgelisim/" title="Kişisel gelişim üzerine kendime yönelik yaptığım araştırmaların özetini paylaşacağım">Kişisel Gelişim</a> (4)<br>
+	<a href="http://mustafatekdemir.com/category/mikroislemci/" title="Mikroişlemci uygulamaları ve özelliklerinden bahsedeceğim">Mikrodenetleyici Hakkında</a> (4)<br>
+	<a href="http://mustafatekdemir.com/category/pcb-tasarimi/" title="PCB tasarimi ve pif noktalari ile ilgili bilgileri vereceğim.">PCB Tasarımı</a> (4)<br>
+	<a href="http://mustafatekdemir.com/category/raspberry-pi-esp/">Raspberry Pi – ESP</a> (1)<br>
+	<a href="http://mustafatekdemir.com/category/stm32-2/" title="STM32 serisi işlemciler hakkında paylaşımlarda bulunacağım">STM32-STM8 Örnekleri</a> (7)<br>
+	<a href="http://mustafatekdemir.com/category/yazilim/" title="Arayüz oluşturma ,mikroişlemci programlamayla ilgili bilgiler paylaşılacak.">Yazılım(C/C++/C#/HTML)</a> (6)<br>
+</p><p>WP Cumulus Flash tag cloud by <a href="http://www.roytanck.com/" rel="nofollow">Roy Tanck</a> requires <a href="http://www.macromedia.com/go/getflashplayer">Flash Player</a> 9 or better.</p></div><script type="text/javascript">var widget_so2881438 = new SWFObject("http://mustafatekdemir.com/wp-content/plugins/wp-cumulus/tagcloud.swf?r=7734502", "tagcloudflash", "230", "230", "9", "#000000");widget_so2881438.addParam("wmode", "transparent");widget_so2881438.addParam("allowScriptAccess", "always");widget_so2881438.addVariable("tcolor", "0x26ea5b");widget_so2881438.addVariable("tcolor2", "0x00abff");widget_so2881438.addVariable("hicolor", "0x0000ff");widget_so2881438.addVariable("tspeed", "100");widget_so2881438.addVariable("distr", "true");widget_so2881438.addVariable("mode", "both");widget_so2881438.addVariable("tagcloud", "%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Farm%2F%27+class%3D%27tag-link-15+tag-link-position-1%27+title%3D%274+konu%27+style%3D%27font-size%3A+17.333333333333pt%3B%27%3EArm%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fboard%2F%27+class%3D%27tag-link-116+tag-link-position-2%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Eboard%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fbookcase%2F%27+class%3D%27tag-link-25+tag-link-position-3%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Ebookcase%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fc%2F%27+class%3D%27tag-link-94+tag-link-position-4%27+title%3D%274+konu%27+style%3D%27font-size%3A+17.333333333333pt%3B%27%3EC%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fclassic%2F%27+class%3D%27tag-link-22+tag-link-position-5%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Eclassic%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fdesign%2F%27+class%3D%27tag-link-12+tag-link-position-6%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Edesign%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Feagle%2F%27+class%3D%27tag-link-111+tag-link-position-7%27+title%3D%273+konu%27+style%3D%27font-size%3A+15pt%3B%27%3EEagle%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Felectronic%2F%27+class%3D%27tag-link-100+tag-link-position-8%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Eelectronic%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Felektronik%2F%27+class%3D%27tag-link-99+tag-link-position-9%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Eelektronik%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fexample%2F%27+class%3D%27tag-link-194+tag-link-position-10%27+title%3D%274+konu%27+style%3D%27font-size%3A+17.333333333333pt%3B%27%3Eexample%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Ffark%2F%27+class%3D%27tag-link-137+tag-link-position-11%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Efark%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Ffender%2F%27+class%3D%27tag-link-26+tag-link-position-12%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Efender%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fflash%2F%27+class%3D%27tag-link-81+tag-link-position-13%27+title%3D%273+konu%27+style%3D%27font-size%3A+15pt%3B%27%3Eflash%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fgitar-2%2F%27+class%3D%27tag-link-28+tag-link-position-14%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Egitar%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fgpio%2F%27+class%3D%27tag-link-19+tag-link-position-15%27+title%3D%273+konu%27+style%3D%27font-size%3A+15pt%3B%27%3EGPIO%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fguitar%2F%27+class%3D%27tag-link-23+tag-link-position-16%27+title%3D%273+konu%27+style%3D%27font-size%3A+15pt%3B%27%3Eguitar%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fhandmade%2F%27+class%3D%27tag-link-42+tag-link-position-17%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Ehandmade%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fhata%2F%27+class%3D%27tag-link-145+tag-link-position-18%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Ehata%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fkitaplik%2F%27+class%3D%27tag-link-24+tag-link-position-19%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Ekitapl%C4%B1k%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fkisisel-gelisim%2F%27+class%3D%27tag-link-151+tag-link-position-20%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Eki%C5%9Fisel+geli%C5%9Fim%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fkod%2F%27+class%3D%27tag-link-177+tag-link-position-21%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3EKOD%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fmcu%2F%27+class%3D%27tag-link-18+tag-link-position-22%27+title%3D%273+konu%27+style%3D%27font-size%3A+15pt%3B%27%3Emcu%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fmikroislemci-2%2F%27+class%3D%27tag-link-21+tag-link-position-23%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Emikroi%C5%9Flemci%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fopen-drain%2F%27+class%3D%27tag-link-217+tag-link-position-24%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3EOpen+drain%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fpcb%2F%27+class%3D%27tag-link-9+tag-link-position-25%27+title%3D%275+konu%27+style%3D%27font-size%3A+19.2pt%3B%27%3EPCB%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fpedal%2F%27+class%3D%27tag-link-30+tag-link-position-26%27+title%3D%273+konu%27+style%3D%27font-size%3A+15pt%3B%27%3Epedal%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fpin%2F%27+class%3D%27tag-link-20+tag-link-position-27%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Epin%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fpull-down%2F%27+class%3D%27tag-link-220+tag-link-position-28%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3EPull+Down%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fpull-up%2F%27+class%3D%27tag-link-219+tag-link-position-29%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3EPull+Up%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fpush-pull%2F%27+class%3D%27tag-link-218+tag-link-position-30%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3EPush+Pull%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fread%2F%27+class%3D%27tag-link-82+tag-link-position-31%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Eread%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fst%2F%27+class%3D%27tag-link-16+tag-link-position-32%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Est%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fstm8%2F%27+class%3D%27tag-link-70+tag-link-position-33%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Estm8%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fstm32%2F%27+class%3D%27tag-link-85+tag-link-position-34%27+title%3D%277+konu%27+style%3D%27font-size%3A+22pt%3B%27%3EStm32%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fstm32f0%2F%27+class%3D%27tag-link-222+tag-link-position-35%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3ESTM32F0%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fstm32f407%2F%27+class%3D%27tag-link-17+tag-link-position-36%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Estm32f407%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fstvp%2F%27+class%3D%27tag-link-140+tag-link-position-37%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3ESTVP%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Ftasarim%2F%27+class%3D%27tag-link-14+tag-link-position-38%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Etasar%C4%B1m%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Ftecrube%2F%27+class%3D%27tag-link-159+tag-link-position-39%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Etecr%C3%BCbe%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Ftip%2F%27+class%3D%27tag-link-11+tag-link-position-40%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Etip%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Ftrick%2F%27+class%3D%27tag-link-10+tag-link-position-41%27+title%3D%271+konu%27+style%3D%27font-size%3A+8pt%3B%27%3Etrick%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Ftutorial%2F%27+class%3D%27tag-link-31+tag-link-position-42%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Etutorial%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fusart%2F%27+class%3D%27tag-link-190+tag-link-position-43%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Eusart%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fwrite%2F%27+class%3D%27tag-link-83+tag-link-position-44%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3Ewrite%3C%2Fa%3E%0A%3Ca+href%3D%27http%3A%2F%2Fmustafatekdemir.com%2Ftag%2Fornek%2F%27+class%3D%27tag-link-197+tag-link-position-45%27+title%3D%272+konu%27+style%3D%27font-size%3A+12.2pt%3B%27%3E%C3%B6rnek%3C%2Fa%3E%3C%2Ftags%3E");widget_so2881438.addVariable("categories", "%09%3Ca+href%3D%22http%3A%2F%2Fmustafatekdemir.com%2Fcategory%2Fdonanim%2F%22+title%3D%22Devrenin+donan%C4%B1msal+tasar%C4%B1m%C4%B1%2C+kullan%C4%B1lan+malzemeler+hakk%C4%B1nda+bilgiler+verece%C4%9Fim.%22%3EDonan%C4%B1m%3C%2Fa%3E+%282%29%3Cbr+%2F%3E%0A%09%3Ca+href%3D%22http%3A%2F%2Fmustafatekdemir.com%2Fcategory%2Fgitar%2F%22+title%3D%22Elektro+gitarist+olarak+bilgilerimi+aktarmaya+%C3%A7al%C4%B1%C5%9Faca%C4%9F%C4%B1m+%22%3EGitar+ve+Daha+Fazlas%C4%B1%3C%2Fa%3E+%287%29%3Cbr+%2F%3E%0A%09%3Ca+href%3D%22http%3A%2F%2Fmustafatekdemir.com%2Fcategory%2Fkisiselgelisim%2F%22+title%3D%22Ki%C5%9Fisel+geli%C5%9Fim+%C3%BCzerine+kendime+y%C3%B6nelik+yapt%C4%B1%C4%9F%C4%B1m+ara%C5%9Ft%C4%B1rmalar%C4%B1n+%C3%B6zetini+payla%C5%9Faca%C4%9F%C4%B1m%22%3EKi%C5%9Fisel+Geli%C5%9Fim%3C%2Fa%3E+%284%29%3Cbr+%2F%3E%0A%09%3Ca+href%3D%22http%3A%2F%2Fmustafatekdemir.com%2Fcategory%2Fmikroislemci%2F%22+title%3D%22Mikroi%C5%9Flemci+uygulamalar%C4%B1+ve+%C3%B6zelliklerinden+bahsedece%C4%9Fim%22%3EMikrodenetleyici+Hakk%C4%B1nda%3C%2Fa%3E+%284%29%3Cbr+%2F%3E%0A%09%3Ca+href%3D%22http%3A%2F%2Fmustafatekdemir.com%2Fcategory%2Fpcb-tasarimi%2F%22+title%3D%22PCB+tasarimi+ve+pif+noktalari+ile+ilgili+bilgileri+verece%C4%9Fim.%22%3EPCB+Tasar%C4%B1m%C4%B1%3C%2Fa%3E+%284%29%3Cbr+%2F%3E%0A%09%3Ca+href%3D%22http%3A%2F%2Fmustafatekdemir.com%2Fcategory%2Fraspberry-pi-esp%2F%22+%3ERaspberry+Pi+%26%238211%3B+ESP%3C%2Fa%3E+%281%29%3Cbr+%2F%3E%0A%09%3Ca+href%3D%22http%3A%2F%2Fmustafatekdemir.com%2Fcategory%2Fstm32-2%2F%22+title%3D%22STM32+serisi+i%C5%9Flemciler+hakk%C4%B1nda+payla%C5%9F%C4%B1mlarda+bulunaca%C4%9F%C4%B1m%22%3ESTM32-STM8+%C3%96rnekleri%3C%2Fa%3E+%287%29%3Cbr+%2F%3E%0A%09%3Ca+href%3D%22http%3A%2F%2Fmustafatekdemir.com%2Fcategory%2Fyazilim%2F%22+title%3D%22Aray%C3%BCz+olu%C5%9Fturma+%2Cmikroi%C5%9Flemci+programlamayla+ilgili+bilgiler+payla%C5%9F%C4%B1lacak.%22%3EYaz%C4%B1l%C4%B1m%28C%2FC%2B%2B%2FC%23%2FHTML%29%3C%2Fa%3E+%286%29%3Cbr+%2F%3E%0A");widget_so2881438.write("wpcumuluswidgetcontent7765236");</script>	        </aside>		<aside id="rss-3" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="http://webrazzi.com/feed/"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/rss.png" alt="RSS"></a> <a class="rsswidget" href="http://webrazzi.com/">Webrazzi</a></h3><ul><li><a class="rsswidget" href="http://webrazzi.com/2017/07/11/turkcell-t80-ozellik-fiyat-t-vr/">Turkcell T80, parmak izi okuyucu, çift kamera ve sanal gerçeklik başlığıyla geliyor</a></li><li><a class="rsswidget" href="http://webrazzi.com/2017/07/11/inveon-2017-e-ticaret-raporu/">Inveon, 2017 yılının ilk yarısı için e-ticaret istatistiklerini paylaştı</a></li><li><a class="rsswidget" href="http://webrazzi.com/2017/07/11/twitterdan-yeni-hesaplari-otomatik-olarak-sessize-alma-ozelligi/">Twitter’dan yeni hesapları otomatik olarak sessize alma özelliği</a></li><li><a class="rsswidget" href="http://webrazzi.com/2017/07/11/samsung-yunanistan-innoetics/">Samsung, Yunanistan merkezli innoetics’i yaklaşık 40 milyon dolara satın alıyor</a></li></ul></aside><aside id="rss-4" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="http://www.embedded.com/rss/all"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/rss.png" alt="RSS"></a> <a class="rsswidget" href="http://www.embedded.com/">EMBEDDED</a></h3><ul><li><a class="rsswidget" href="http://embedded.com/electronics-blogs/without-a-paddle/4458611/A-solution-looking-for-a-problem?_mc=sm_emb">A solution looking for a problem</a></li><li><a class="rsswidget" href="http://embedded.com/electronics-blogs/say-what-/4458606/The-invisible-link-between-cameras--drones--and-VR-headsets?_mc=sm_emb">The invisible link between cameras, drones, and VR headsets</a></li></ul></aside><aside id="rss-2" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="http://www.edn.com/rss/all"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/rss.png" alt="RSS"></a> <a class="rsswidget" href="http://www.edn.com/">EDN</a></h3><ul><li><a class="rsswidget" href="http://edn.com/electronics-blogs/living-analog/4458612/Multi-layer-shields-improve-shielding-effectiveness">Multi-layer shields improve shielding effectiveness</a></li><li><a class="rsswidget" href="http://edn.com/design/power-management/4458615/Optimizing-Snubber-Design-Through-Frequency-Domain-Analysis-">Optimizing snubber design through frequency-domain analysis</a></li><li><a class="rsswidget" href="http://edn.com/design/pc-board/4458614/An-IBIS-AMI-Simulator-for-the-rest-of-us">An IBIS-AMI Simulator for the rest of us</a></li></ul></aside><aside id="calendar-2" class="widget widget_calendar"><h3 class="widget-title">Takvim</h3><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>Temmuz 2017</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Pazartesi">P</th>
+		<th scope="col" title="Salı">S</th>
+		<th scope="col" title="Çarşamba">Ç</th>
+		<th scope="col" title="Perşembe">P</th>
+		<th scope="col" title="Cuma">C</th>
+		<th scope="col" title="Cumartesi">C</th>
+		<th scope="col" title="Pazar">P</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://mustafatekdemir.com/2016/11/">« Kas</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+	</tr>
+	<tr>
+		<td>10</td><td>11</td><td id="today">12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	<tr>
+		<td>31</td>
+		<td class="pad" colspan="6">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></aside><aside id="useronline-2" class="widget widget_useronline"><h3 class="widget-title">Online Kullanıcılar</h3><div id="useronline-count"><a href="http://mustafatekdemir.com/useronline"><strong>2 Users</strong> Çevrimiçi</a></div><div id="useronline-browsing-site">Users: <strong>2 Guests</strong></div></aside><aside id="views-2" class="widget widget_views"><h3 class="widget-title">Views</h3><ul>
+<li><a href="http://mustafatekdemir.com/pcb-tasarimi/eagle-gerber-olusturma-ve-temel-ozellikler/" title="EAGLE GERBER OLUŞTURMA VE TEMEL ÖZELLİKLER">EAGLE GERBER OLUŞTURMA VE TEMEL ÖZELLİKLER</a> - 3.077 views</li><li><a href="http://mustafatekdemir.com/pcb-tasarimi/pcb-tasariminda-puf-noktalar/" title="PCB Tasarımında Püf Noktalar/EMC Uyumluluk">PCB Tasarımında Püf Noktalar/EMC Uyumluluk</a> - 2.782 views</li><li><a href="http://mustafatekdemir.com/about/" title="Hakkımda">Hakkımda</a> - 2.755 views</li><li><a href="http://mustafatekdemir.com/kisiselgelisim/tortoise-svn-kurulum-ozet/" title="Tortoıse SVN Kurulum Özet">Tortoıse SVN Kurulum Özet</a> - 2.459 views</li><li><a href="http://mustafatekdemir.com/gitar/klasik-gitardan-kitaplik-raf-yapimi-classic-guitar-bookcase/" title="Klasik Gitardan Kitaplık Raf yapımı (Classic Guitar Bookcase)">Klasik Gitardan Kitaplık Raf yapımı (Classic Guitar Bookcase)</a> - 2.207 views</li><li><a href="http://mustafatekdemir.com/gitar/ev-studyo-masasi-home-studio-table/" title="Ev Stüdyo Masası – Home Studio Table">Ev Stüdyo Masası – Home Studio Table</a> - 2.207 views</li><li><a href="http://mustafatekdemir.com/donanim/kondansator-cesitleri-farklari/" title="Kondansatör Çeşitleri, Farkları">Kondansatör Çeşitleri, Farkları</a> - 2.122 views</li><li><a href="http://mustafatekdemir.com/gitar/floyd-rose-tel-degisimi-floyd-rose-string-change/" title="Floyd Rose Tel Değişimi – Floyd Rose String Change">Floyd Rose Tel Değişimi – Floyd Rose String Change</a> - 2.070 views</li><li><a href="http://mustafatekdemir.com/kisiselgelisim/dikkat-daginikligi-nasil-giderilir-is-hayati/" title="Dikkat Dağınıklığı Nasıl Giderilir? İş Hayatı">Dikkat Dağınıklığı Nasıl Giderilir? İş Hayatı</a> - 1.977 views</li><li><a href="http://mustafatekdemir.com/gitar/ab-selector-guitar-pedal/" title="AB Selector Guitar Pedal">AB Selector Guitar Pedal</a> - 1.814 views</li><li><a href="http://mustafatekdemir.com/gitar/sansamp-gt2-tutorial-guitar-pedal/" title="Sansamp GT2 Tutorial Guitar Pedal">Sansamp GT2 Tutorial Guitar Pedal</a> - 1.742 views</li><li><a href="http://mustafatekdemir.com/mikroislemci/st-visual-programmer-kullanimi/" title="ST Visual Programmer Kullanımı">ST Visual Programmer Kullanımı</a> - 1.591 views</li><li><a href="http://mustafatekdemir.com/gitar/fender-stratocaster-relic-eskitme-islemi/" title="Fender Stratocaster Relic (Eskitme) İşlemi">Fender Stratocaster Relic (Eskitme) İşlemi</a> - 1.439 views</li><li><a href="http://mustafatekdemir.com/stm32-2/stm8-unique-id-okuma/" title="STM8 UNIQUE ID OKUMA">STM8 UNIQUE ID OKUMA</a> - 1.372 views</li><li><a href="http://mustafatekdemir.com/pcb-tasarimi/eagle-cad-semada-bus-cizimi/" title="Eagle Cad Şemada BUS çizimi">Eagle Cad Şemada BUS çizimi</a> - 1.366 views</li><li><a href="http://mustafatekdemir.com/pcb-tasarimi/eagle-pcbden-kutuphane-olusturma/" title="Eagle PCB’den Kütüphane Oluşturma">Eagle PCB’den Kütüphane Oluşturma</a> - 1.174 views</li><li><a href="http://mustafatekdemir.com/yazilim/cc-kod-yazma-kurallari/" title="C/C++ KOD YAZMA KURALLARI">C/C++ KOD YAZMA KURALLARI</a> - 1.173 views</li><li><a href="http://mustafatekdemir.com/yazilim/coocox-error-connect-failed-hatasi/" title="CooCox : Connect failed HATASI">CooCox : Connect failed HATASI</a> - 1.098 views</li><li><a href="http://mustafatekdemir.com/stm32-2/kapasitif-dokunmatik-buton-projesi/" title="Kapasitif Dokunmatik Buton Projesi">Kapasitif Dokunmatik Buton Projesi</a> - 1.030 views</li><li><a href="http://mustafatekdemir.com/mikroislemci/yigin-stack-ve-heap-kullanimi/" title="Yığın (Stack ve Heap) Kullanımı">Yığın (Stack ve Heap) Kullanımı</a> - 1.000 views</li><li><a href="http://mustafatekdemir.com/yazilim/main-fonksiyonuna-disaridan-nasil-parametre-girilir/" title="main(  ) fonksiyonuna dışarıdan nasıl parametre girilir?">main(  ) fonksiyonuna dışarıdan nasıl parametre girilir?</a> - 994 views</li><li><a href="http://mustafatekdemir.com/donanim/komponentlerin-isim-kisaltmalari-component-name-abbreviations/" title="Komponentlerin İsim Kısaltmaları /Component Name Abbreviations">Komponentlerin İsim Kısaltmaları /Component Name Abbreviations</a> - 990 views</li><li><a href="http://mustafatekdemir.com/mikroislemci/stm32f407-gpio-ayarlari/" title="Stm32f407 GPIO Ayarları/ GPIO Optıons">Stm32f407 GPIO Ayarları/ GPIO Optıons</a> - 981 views</li><li><a href="http://mustafatekdemir.com/gitar/ekolayzir-pedali-4-band-eq-pedal-eq7545/" title="Ekolayzır Pedalı (4 BAND EQ PEDAL eq7545)">Ekolayzır Pedalı (4 BAND EQ PEDAL eq7545)</a> - 949 views</li><li><a href="http://mustafatekdemir.com/yazilim/temel-html-kodlari-anlamlari/" title="Temel HTML Kodları &amp; Anlamları">Temel HTML Kodları &amp; Anlamları</a> - 874 views</li><li><a href="http://mustafatekdemir.com/yazilim/c-dili-belirleyiciler-ve-niteleyiciler/" title="C dili Belirleyiciler ve Niteleyiciler">C dili Belirleyiciler ve Niteleyiciler</a> - 844 views</li><li><a href="http://mustafatekdemir.com/stm32-2/a/" title="STM32 Flash Okuma Yazma Silme İşlemleri">STM32 Flash Okuma Yazma Silme İşlemleri</a> - 837 views</li><li><a href="http://mustafatekdemir.com/kisiselgelisim/vazgecebilmeliymisiz/" title="Vazgeçebilmek…  İş Hayatı">Vazgeçebilmek…  İş Hayatı</a> - 837 views</li><li><a href="http://mustafatekdemir.com/raspberry-pi-esp/781/" title="Raspberry Pi Linux Komutları">Raspberry Pi Linux Komutları</a> - 774 views</li><li><a href="http://mustafatekdemir.com/stm32-2/stm8l_uart_haltmode_interrupt/" title="STM8Lxx UART Kesmesi &amp; İşlemci Uyku Modu">STM8Lxx UART Kesmesi &amp; İşlemci Uyku Modu</a> - 645 views</li></ul>
+</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+						<a href="https://wordpress.org/" title="Anlamlı kişisel yayınlama platformu">WordPress gururla sunar</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<small>Copy Protected by <a href="http://chetangole.com/" target="_blank">Chetan</a>'s <a href="http://chetangole.com/blog/wp-copyprotect/" target="_blank">WP-Copyprotect</a>.</small>
+<script type="text/javascript">
+/* <![CDATA[ */
+var useronlineL10n = {"ajax_url":"http:\/\/mustafatekdemir.com\/wp-admin\/admin-ajax.php","timeout":"300000"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/useronline.js.indir"></script>
+<script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/comment-reply.min.js.indir"></script>
+<script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/navigation.js.indir"></script>
+<script type="text/javascript" src="./Raspberry Pi Linux Komutları _ MUSTAFA TEKDEMİR_files/wp-embed.min.js.indir"></script>
+
+</body></html>

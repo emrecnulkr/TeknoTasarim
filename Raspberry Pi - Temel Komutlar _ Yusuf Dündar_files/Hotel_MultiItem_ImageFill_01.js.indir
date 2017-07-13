@@ -1,0 +1,736 @@
+/**
+ * @fileoverview Provides layout specific functionality for HTML5 layout.
+ * This includes layout specific directives, that are responsible for
+ * interaction with the user, alignment of the blocks and texts in them.
+ * Also includes layout specification and initialization.
+ */
+
+
+/**
+ * Utilities object with specific functionality for the layout.
+ * @param {!angular.Object} ng AngularJS object.
+ * @return {!Object.<function>} Available functions.
+ */
+var layoutUtils = (function(ng) {
+  /**
+   * Minimal aspect ratio to consider an image to be vertical.
+   * @const {number}
+   */
+  var ASPECT_RATIO = 1.2;
+
+
+  /**
+   * Minimum and maximum font sizes for the elements. Pixel units are used.
+   * @enum {number}
+   */
+  var FontSizes = {
+    MAX_HEADLINE: 18,
+    MIN_HEADLINE: 11,
+    MIN_SUBTITLE: 11
+  };
+
+  var module = ng.module('custom', []);
+
+  window.onAdData = function(data, util) {
+    var preloader = window.initPreloading(data);
+    preloader.addCompletionListener(function() {
+      utils.onAdData(data, util);
+    });
+    preloader.start();
+  };
+
+
+  /**
+   * Convenience alias for querySelectorAll that returns results as Array
+   * (instead of querySelectorAll's native nodeList.)
+   * @param  {string} selector A CSS-style selector. ex: "#foo .bar>img"
+   * @param  {Element=} opt_element Root element to query (document is default).
+   * @return {Array.<Element>}
+   */
+  function q(selector, opt_element) {
+    if (!opt_element) {
+      opt_element = document;
+    }
+    return Array.prototype.slice.call(opt_element.querySelectorAll(selector));
+  }
+
+
+  /**
+   * Creates the list of the CSS classes to apply to the layout content
+   * depending on parameters from DAB.
+   * @param {!angular.Scope} scope AngularJS layout scope.
+   * @return {!Object.<string>} All available CSS classes.
+   */
+  function getClasses(scope) {
+    var design = scope.design;
+    var layout = [design['cornerStyle']];
+
+    if (design['bgImageUrl'] && design['bgImageUrl'].toLowerCase() !== 'none' &&
+        design['bgImageUrl'].toLowerCase() !== 'blank') {
+      if (scope.checkUrl(design['bgImageUrl'])) {
+        layout.push('image');
+      }
+    }
+
+    return {
+      layout: layout.join(' ')
+    };
+  }
+
+  /**
+   * Controller for using data binding in layout.
+   * @param {!angular.Scope} $scope AngularJS layout scope.
+   * @param {!Object} dynamicData Dynamic data from DAB.
+   */
+  function LayoutController($scope, dynamicData) {
+    helpers.LayoutController($scope, dynamicData);
+
+    angular.forEach($scope.products, function(product, index) {
+      product.index = index;
+
+      if (!$scope.toBoolean($scope.headline['showPrice'])) {
+        product.price = '';
+      } else {
+        product.price = setPrice($scope, product);
+      }
+    });
+
+    if ($scope.design.subTitleSize < FontSizes.MIN_SUBTITLE) {
+      $scope.design.subTitleSize = FontSizes.MIN_SUBTITLE;
+    }
+
+    if ($scope.design.headlineSize < FontSizes.MIN_HEADLINE) {
+      $scope.design.headlineSize = FontSizes.MIN_HEADLINE;
+    }
+
+    if ($scope.design.headlineSize > FontSizes.MAX_HEADLINE) {
+      $scope.design.headlineSize = FontSizes.MAX_HEADLINE;
+    }
+
+    $scope.classes = getClasses($scope);
+
+    $scope.isTall = function(url) {
+      utils.preload(url, function(img) {
+        return img && (img.width / img.height < ASPECT_RATIO);
+      });
+    };
+
+    $scope.getPaddingMute = function(val) {
+      return Math.max(0, val - parseInt($scope.design.logoPadding, 10));
+    };
+
+
+    /**
+     * Builds lists of the products to be used in the carousels.
+     * @param {number} maxItems Maximum number of items in the list.
+     * @param {number} maxLists Maximum number of lists.
+     * @return {Array.<Object>} All the products lists available.
+     */
+    $scope.buildProductLists = function(maxItems, maxLists) {
+      var res = [];
+      var products = $scope.products;
+      var chunk = maxItems || 4;
+      var max = maxLists || 10;
+      for (var i = 0, j = 0; i < products.length && j++ < max; i += chunk) {
+        var list = products.slice(i, i + chunk);
+        list = list.concat(products.slice(0, chunk - list.length));
+        res.push(list);
+      }
+      // Do not create duplicates when products number is less
+      // then maximum visible elements.
+      if (products.length < maxItems) {
+        res = [];
+        res.push(products);
+      }
+      if (parseInt($scope.frameHeight, 10) == 90 && products.length < 4) {
+        res = [];
+        res = [products.slice(0, 2), products.slice(2, 4)];
+      }
+      return res;
+    };
+  }
+
+
+  /**
+   *  Draws bullets, binds them to the active product.
+   *  @return {!angular.Directive} Directive definition object.
+   */
+  module.directive('bullets', function() {
+    return {
+      restrict: 'A',
+      link: function(scope, el) {
+        var container = ng.element(document.createElement('div'));
+        el.append(container);
+
+        var drawBullet = function(color) {
+          var canvas = document.createElement('canvas');
+          var radius = 2;
+          var context = canvas.getContext('2d');
+
+          canvas.width = 4;
+          canvas.height = 4;
+          canvas.style.position = 'absolute';
+          context.arc(radius, radius, radius, 0, 2 * Math.PI, false);
+          context.fillStyle = color;
+          context.fill();
+
+          return canvas;
+        };
+
+        var addBullet = function(index) {
+          var bullet = ng.element(document.createElement('div'));
+          container.append(bullet);
+          bullet.addClass('bullet');
+
+          var imgOff = drawBullet('#fff');
+          imgOff.style.opacity = .5;
+          var imgOn = drawBullet('#fff');
+
+          bullet.append(imgOff);
+          bullet.append(imgOn);
+
+          scope.$on('active:change', function(e, n) {
+            if (n == index) {
+              imgOn.style.display = 'inline-block';
+            } else {
+              imgOn.style.display = 'none';
+            }
+          });
+        };
+
+        scope.$watch('productLists', function(productLists) {
+          if (productLists != undefined && productLists.length > 1) {
+            for (var i = 0; i < productLists.length; i++) {
+              addBullet(i);
+            }
+          }
+        });
+      }
+    };
+  });
+
+
+  /**
+   * After dynamic text sizing, this makes item font sizes uniform based
+   * on the smallest font size.
+   * @return {!angular.Directive} Directive definition object.
+   */
+  module.directive('uniformTextSize', ['$timeout', function($timeout) {
+    return {
+      restrict: 'A',
+      scope: {},
+      link: function(scope, element) {
+        $timeout(function() {
+          var elClass = element.attr('class').split(' ')[0];
+          elClass = '.' + elClass;
+          var smallestFontSize = 1000;
+          // Find smallest font size.
+          ng.forEach(q(elClass), function(textFitElement) {
+            var elementMinimumFontSize =
+                textFitElement.getAttribute('minfontsize');
+            var elementFontSize = parseInt(
+                helpers.getStyleProperty(textFitElement, 'font-size'));
+            if (elementFontSize < elementMinimumFontSize) {
+              elementFontSize = elementMinimumFontSize;
+            }
+            if (elementFontSize < smallestFontSize) {
+              smallestFontSize = elementFontSize;
+            }
+          });
+
+          // Make uniform.
+          ng.forEach(q(elClass), function(el) {
+            var ngEl = ng.element(el);
+            var ngSpan = ng.element(ngEl[0].querySelector('span'));
+            ngEl.css('font-size', smallestFontSize + 'px');
+            ngSpan.css('font-size', smallestFontSize + 'px');
+          });
+        }, 500);
+      }
+    };
+  }]);
+
+
+  /**
+   * Draws arrow, binds mouse events to it.
+   * @param {!angular.$timeout} $timeout The Angular timeout service.
+   * @return {!angular.Directive} Directive definition object.
+   */
+  module.directive('arrow', function($timeout) {
+    return {
+      restrict: 'A',
+      link: function(scope, el) {
+        $timeout(function() {
+          var canvas = document.createElement('canvas');
+          var context = canvas.getContext('2d');
+
+          canvas.width = 10;
+          canvas.height = 16;
+          canvas.style.position = 'absolute';
+          context.translate(canvas.width, 0);
+          context.scale(-1, 1);
+          context.moveTo(6, 0);
+          context.lineTo(0, 8);
+          context.lineTo(6, 16);
+          context.lineTo(10, 16);
+          context.lineTo(4, 8);
+          context.lineTo(10, 0);
+          context.lineTo(6, 0);
+          context.fillStyle = '#fff';
+          context.fill();
+
+          el[0].appendChild(canvas);
+          canvas.style.left = '{0}px'.format((el[0].offsetWidth -
+              canvas.width) / 2);
+          canvas.style.top = '{0}px'.format((el[0].offsetHeight -
+              canvas.height) / 2);
+          canvas.style.opacity = .9;
+
+          el.bind('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (el.hasClass('left')) {
+              scope.$emit('carousel_previous_item');
+            } else if (el.hasClass('right')) {
+              scope.$emit('carousel_next_item');
+            }
+          });
+        });
+      }
+    };
+  });
+
+
+  /**
+   * Draws cta button, binds mouse events to it.
+   * @return {!angular.Directive} Directive definition object.
+   */
+  module.directive('cta', function() {
+    return {
+      restrict: 'A',
+      link: function(scope, el) {
+        var element = el[0];
+        var design = scope.design;
+        var buttonColor = design.btnColor.toColor();
+        var buttonRollColor = design.btnRollColor.toColor();
+
+        if (scope.isEmpty(scope.headline.cta)) {
+          element.style = 'display: none';
+          return;
+        }
+
+        var drawBg = function(el, color, width, height, radius) {
+          el.css({
+            'width': width + 'px',
+            'height': height + 'px',
+            'background': color,
+            'position': 'absolute',
+            'border-bottom': color.changeBrightness(-.4) + ' 3px solid',
+            'border-bottom-left-radius': radius + 'px',
+            'border-bottom-right-radius': radius + 'px'
+          });
+        };
+
+        el.text(scope.headline.cta);
+
+        helpers.extTextFit(el);
+
+        el.css({
+          'padding': '0'
+        });
+
+        var span = ng.element(element.querySelector('span'));
+
+        if (design.btnStyle != 'text') {
+          var bgOver = ng.element(document.createElement('div'));
+          el.prepend(bgOver);
+          bgOver.addClass('cta-bg');
+
+          var bgOut = ng.element(document.createElement('div'));
+          el.prepend(bgOut);
+          bgOut.addClass('cta-bg');
+
+          span.css({
+            'color': design.txtColorCta.toColor(),
+            'display': 'inline-block',
+            'position': 'relative',
+            'text-shadow': '0 1px 0 ' + buttonColor.changeBrightness(-.4)
+          });
+
+          // Constant border radius for the element is 3 pixels.
+          var radius = 3;
+          var height = element.getBoundingClientRect().height;
+          var width = element.getBoundingClientRect().width;
+
+          drawBg(bgOut, buttonColor, width, height, radius);
+          drawBg(bgOver, buttonRollColor, width, height, radius);
+
+          el.bind('mouseenter', function() {
+            bgOver[0].style.display = 'block';
+          });
+          el.bind('mouseleave', function() {
+            bgOver[0].style.display = 'none';
+          });
+
+        } else {
+          span.css({
+            'color': buttonColor,
+            'display': 'inline-block',
+            'position': 'relative'
+          });
+
+          el.bind('mouseenter', function() {
+            span.css({
+              'color': buttonRollColor
+            });
+          });
+          el.bind('mouseleave', function() {
+            span.css({
+              'color': buttonColor
+            });
+          });
+        }
+
+        el.triggerHandler('mouseleave');
+      }
+    };
+  });
+
+  /**
+   * Carousel initialization.
+   * @param {!angular.$timeout} $timeout The Angular timeout service.
+   * @return {!angular.Directive} Directive definition object.
+   */
+  module.directive('carousel', function($timeout) {
+    return {
+      restrict: 'A',
+      link: function(scope, el) {
+        $timeout(function() {
+          createCarousel(scope, el, $timeout);
+        });
+      }
+    };
+  });
+
+  ng.module('layout', ['utils', module.name],
+      function($controllerProvider) {
+        $controllerProvider.allowGlobals();
+  });
+
+
+  /**
+   * Sets the price for the product. In case there is sale price, it will be
+   * shown as a price, otherwise it will be regular price. If the sale and
+   * regular prices are absent, simple price will be used.
+   * @param {!angular.Scope} scope AngularJS layout scope.
+   * @param {!Object} product AngularJS object representing product.
+   * @return {string} Returns updated price.
+   */
+  function setPrice(scope, product) {
+    var price = product.price;
+    var salePrice = product.salePrice;
+    var regularPrice = product.regularPrice;
+
+    if (!scope.isEmpty(salePrice)) {
+      price = salePrice;
+    } else if (scope.isEmpty(salePrice) && !scope.isEmpty(regularPrice)) {
+      price = regularPrice;
+    }
+
+    return price;
+  }
+
+
+  /**
+   * Carousel functionality implementation.
+   * @param {!angular.Scope} scope AngularJS layout scope.
+   * @param {!angular.JQLite} el The jQuery element object to handle.
+   * @param {!angular.$timeout} $timeout The Angular timeout service.
+   */
+  function createCarousel(scope, el, $timeout) {
+    var element = el[0];
+    var count = scope.$eval(element.attributes.total.value);
+    // The number of visible items will be retrieved from "visible-items"
+    // attribute. At least it should be 2.
+    var visibleItems = parseInt(element.getAttribute('visible-items'), 10) || 2;
+    var shiftItems = 2;
+    var multiMode = 2 * count / visibleItems > 1;
+    var current = 0;
+    var wrapped = false;
+    var timeoutId;
+    var dir;
+    var items = ng.element(element.querySelectorAll('.carousel-item'));
+    var carousel = ng.element(element.querySelector('.carousel'));
+    var stepMode = Boolean(element.getAttribute('step-mode'));
+
+    // Convert NodeList to Array. Products array is used to track current
+    // visible elements.
+    var products = [].slice.call(element.querySelectorAll('.product'));
+    // Set up variables according to layout type and remove unnecessary
+    // animation elements (that are used for smooth animation) from array.
+
+    visibleItems = Math.min(visibleItems, scope.products.length);
+    if (visibleItems == 3) {
+      shiftItems = visibleItems;
+    }
+    if (visibleItems == 4) {
+      products = products.slice(shiftItems);
+    } else {
+      products = products.slice(visibleItems, (count + 1) *
+          visibleItems);
+    }
+
+    for (var i = 0; i < products.length; i++) {
+      products[i] = ng.element(products[i]);
+    }
+
+    var listWidth = stepMode ? items[0].getBoundingClientRect().width :
+        carousel[0].getBoundingClientRect().width;
+    var listHeight = el[0].getBoundingClientRect().height;
+    // The width of the list together with left and right borders. The border is
+    // always one pixel width.
+    var listWBorderWidth = listWidth + 2;
+    // The height of the list together with top and bottom borders. The border
+    // is always 5 pixels width.
+    var listWBorderHeight = listHeight + 10;
+    var time = element.attributes.timer.value;
+    var duration = element.attributes.duration.value;
+    var isVertical = element.attributes.vertical !== undefined;
+
+    /**
+     * Applies class "visible" to the visible carousel element.
+     */
+    var setVisible = function() {
+      for (i = 0; i < visibleItems; i++) {
+        products[i].addClass('visible');
+      }
+    };
+
+    setVisible();
+
+    /**
+     * Sets active carousel element.
+     * @param {number} index Active element index.
+     */
+    var setActive = function(index) {
+      scope.$emit('active:change', index);
+      var i;
+
+      if (wrapped) {
+        carousel.removeClass('transition');
+        if (dir == 'left') {
+          i = count + 1;
+        } else if (dir == 'right') {
+          i = 0;
+        }
+
+        if (isVertical) {
+          carousel.css('top', '-{0}px'.format(i * (listWBorderHeight + 5)));
+        } else {
+          carousel.css('left', '-{0}px'.format((i - (stepMode &&
+              dir == 'left' ? 1 : 0)) * listWidth));
+        }
+      }
+
+      for (i = 0; i < products.length; i++) {
+        products[i].removeClass('visible');
+      }
+      setVisible();
+
+      $timeout(function() {
+        move(index);
+      }, wrapped ? 50 : 0);
+
+      current = index;
+    };
+
+
+    /**
+     * Implements movement of the carousel element.
+     * @param {number} index Index of the element to move.
+     */
+    var move = function(index) {
+      carousel[0].setAttribute('class', 'carousel transition fast');
+
+      setTimeout(function() {
+        if (isVertical) {
+          carousel.css('top',
+              '-{0}px'.format((index + 1) * listWBorderHeight + 5));
+        }
+        else carousel.css('left',
+            '-{0}px'.format((index) * listWidth + listWidth));
+      }, 100);
+    };
+
+
+    /**
+     * Initializes timer for the carousel.
+     */
+    var initTimer = function() {
+      onTimeout();
+      if (duration) {
+        $timeout(function() {
+          current = 0;
+          setActive(current);
+          onCancel();
+        }, duration);
+      }
+    };
+
+
+    /**
+     * Implements event callback on next navigation arrow click.
+     */
+    var onNext = function() {
+      wrapped = false;
+      dir = 'right';
+
+      if (++current >= count) {
+        current = 0;
+        wrapped = true;
+      }
+
+      for (var i = 0; i < shiftItems; i++) {
+        products.push(products.shift());
+      }
+      setActive(current);
+    };
+
+
+    /**
+     * Implements event callback on previous navigation arrow click.
+     */
+    var onPrev = function() {
+      wrapped = false;
+      dir = 'left';
+
+      if (--current < (stepMode ? -1 : -0)) {
+        current = count - (stepMode ? 2 : 1);
+        wrapped = true;
+      }
+
+      for (var i = 0; i < shiftItems; i++) {
+        products.unshift(products.pop());
+
+      }
+
+      setActive(current);
+    };
+
+
+    /**
+     * Implements carousel behavior on timeout.
+     */
+    var onTimeout = function() {
+      timeoutId = $timeout(function() {
+        onNext();
+        onTimeout();
+      }, time);
+    };
+
+
+    /**
+     * Stops on timeout event calling.
+     */
+    var onCancel = function() {
+      $timeout.cancel(timeoutId);
+    };
+
+    setTimeout(function() {
+      if (isVertical) {
+        carousel.css('height',
+            '{0}px'.format((listWBorderHeight) * (count + 2)));
+        carousel.css('width', '{0}px'.format(listWidth));
+        items.css('height', '{0}px'.format(listWBorderHeight));
+        items.css('width', '{0}px'.format(listWidth));
+      } else {
+        carousel.css('width', '{0}px'.format(listWBorderWidth * (count + 2)));
+        items.css('width', '{0}px'.format(listWidth));
+      }
+      setActive(0);
+    }, 0);
+
+    if (multiMode) {
+      initTimer();
+      scope.$on('carousel_next_item', onNext);
+      scope.$on('carousel_previous_item', onPrev);
+      el.parent().bind('mouseenter $destroy', onCancel);
+    } else {
+      el.parent().addClass('single-mode');
+    }
+  }
+
+  return {
+    LayoutController: LayoutController
+  };
+})(angular);
+
+(function() {
+  // Hotel vertical
+  utils.defineMeta('version', '3.0');
+  utils.defineMeta('layoutName', 'Hotel_MultiItem_ImageFill_01');
+
+  // REQUIRED
+  utils.defineAttribute('Headline', 'productClickOnly', true);
+  utils.defineAttribute('Product', 'description', true);
+  utils.defineAttribute('Product', 'name', true);
+  utils.defineAttribute('Product', 'price', true);
+  utils.defineAttribute('Product', 'url', true);
+  utils.defineAttribute('Product', 'imageUrl', true);
+
+  // OPTIONAL
+  utils.defineAttribute('Design', 'logoImageUrl', false);
+  utils.defineAttribute('Design', 'borderColor', false);
+  utils.defineAttribute('Design', 'bgColor', false);
+  utils.defineAttribute('Design', 'bgColorAlt', false);
+  utils.defineAttribute('Design', 'btnColor', false);
+  utils.defineAttribute('Design', 'btnRollColor', false);
+  utils.defineAttribute('Design', 'txtColorTitle', false);
+  utils.defineAttribute('Design', 'txtColorPrice', false);
+  utils.defineAttribute('Design', 'txtColorSubTitle', false);
+  utils.defineAttribute('Design', 'txtColorCta', false);
+  utils.defineAttribute('Design', 'txtColorPricePrefix', false);
+  utils.defineAttribute('Design', 'cornerStyle', false);
+  utils.defineAttribute('Headline', 'showPrice', false);
+  utils.defineAttribute('Headline', 'cta', false);
+  utils.defineAttribute('Headline', 'txt', false);
+  utils.defineAttribute('Headline', 'disclaimer', false);
+  utils.defineAttribute('Headline', 'pricePrefix', false);
+  utils.defineAttribute('Product', 'salePrice', false);
+  utils.defineAttribute('Product', 'subTitle', false);
+  utils.defineAttribute('Design', 'logoPadding', false);
+  utils.defineAttribute('Design', 'headlineSize', false);
+  utils.defineAttribute('Design', 'priceSize', false);
+  utils.defineAttribute('Design', 'pricePrefixSize', false);
+  utils.defineAttribute('Design', 'subTitleSize', false);
+  utils.defineAttribute('Design', 'fontUrl', false);
+
+  // OCCURRENCES
+  utils.defineOccurrences('Headline', 1, 1);
+  utils.defineOccurrences('Design', 1, 1);
+  utils.defineOccurrences('Product', 4, 6);
+
+  window.setup = function() {
+    document.getElementById('ad-container').addEventListener('click',
+        utils.clickHandler, false);
+  };
+
+  window.initPreloading = function(dynamicData) {
+    var data = dynamicData.google_template_data.adData[0];
+    var design = utils.parse(data, 'Design')[0];
+    var prods = utils.parse(data, 'Product').slice(0);
+    var preloader = utils.preloader;
+    preloader.addImage(design.logoImageUrl);
+
+    if (design.bgImageUrl && design.bgImageUrl.toLowerCase() !== 'none' &&
+        design.bgImageUrl.toLowerCase() !== 'blank') {
+      preloader.addImage(design.bgImageUrl);
+    }
+
+    for (var i = 0; i < prods.length; i++) {
+      preloader.addImage(prods[i].imageUrl);
+    }
+
+    return preloader;
+  };
+})();
