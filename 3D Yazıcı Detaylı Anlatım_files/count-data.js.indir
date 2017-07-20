@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"and","comments":{"zero":"0 Comments","multiple":"{num} Comments","one":"1 Comment"}},"counts":[{"id":"16004 http:\/\/www.open-electronics.org\/?p=16004","comments":1},{"id":"10113 http:\/\/www.open-electronics.org\/?p=10113","comments":0},{"id":"16571 http:\/\/www.open-electronics.org\/?p=16571","comments":0},{"id":"15481 http:\/\/www.open-electronics.org\/?p=15481","comments":0},{"id":"1042 http:\/\/www.open-electronics.org\/?p=1042","comments":106},{"id":"10108 http:\/\/www.open-electronics.org\/?p=10108","comments":0},{"id":"10544 http:\/\/www.open-electronics.org\/?p=10544","comments":0},{"id":"15808 http:\/\/www.open-electronics.org\/?p=15808","comments":0},{"id":"16149 http:\/\/www.open-electronics.org\/?p=16149","comments":0},{"id":"10130 http:\/\/www.open-electronics.org\/?p=10130","comments":0}]});
+}

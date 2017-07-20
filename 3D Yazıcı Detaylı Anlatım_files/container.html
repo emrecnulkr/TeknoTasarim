@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0455)https://static.traversedlp.com/v1/3868ded5-20b5-4d6b-8722-8ecdc7af7105/container.html?emailMd5Lower=c837d293a097708c9f1648995cc6e38b&emailMd5Upper=8a0dea6f68750736b8192e895b42195e&emailSha1Lower=b8f1d0aa32115430afc2e550ce7e77ee9c46ab3b&emailSha1Upper=0803d61bfcb70427fd682222501e5f26f0165a93&emailSha256Lower=829f8bbfc84bd2d256c982b21ee4cdfcc067f83052ecbd6a371142f703d73265&emailSha256Upper=0017db919e34ecbc9bd3a8fc857a5052573a4801571c1900f7e331385e4612c6 -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <script type="text/javascript" src="./traverse-container.js.indir"> </script>
+
+    <script type="text/javascript">
+        var getParamsFromUrl = function() {
+          var query = location.search.substr(1);
+          var result = {};
+          var part;
+          var queryParts = query.split("&");
+          for (var i = 0; i < queryParts.length; i++){
+            part = queryParts[i];
+            if(part){
+              part = part.split("+").join(" ");
+              var eq = part.indexOf("=");
+              var key = eq>-1 ? part.substr(0,eq) : part;
+              var val = eq>-1 ? decodeURIComponent(part.substr(eq+1)) : "";
+              var from = key.indexOf("[");
+              if(from==-1) result[decodeURIComponent(key)] = val;
+              else {
+                var to = key.indexOf("]");
+                var index = decodeURIComponent(key.substring(from+1,to));
+                key = decodeURIComponent(key.substring(0,from));
+                if(!result[key]) result[key] = [];
+                if(!index) result[key].push(val);
+                else result[key][index] = val;
+              }
+            }
+          }
+          return result;
+        }
+        var urlParams = getParamsFromUrl();
+
+        TraverseContainer.start(urlParams);
+    </script>
+  
+
+<iframe src="./saved_resource(6).html" width="0" height="0" frameborder="0" border="0" id="traverse-container" class="traverse"></iframe></body></html>
